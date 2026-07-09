@@ -15,8 +15,10 @@ Usage:
   python3 render_deck.py ... --pdf        # also export PDF via LibreOffice (soffice)
 
 Palette roles: ink sub muted surface border bg accent divider_bg divider_ink (+ font).
-Spec: {"meta": {...}, "slides": [ {"layout": "...", ...}, ... ]}
-Layouts: cover | toc | divider | icongrid | kpi | bullets | roadmap | closing
+Spec: {"meta": {...theme...}, "slides": [ {"layout": "...", ...}, ... ]}
+Layouts: cover · toc · divider · icongrid · textfigure · table · numbered · bullets ·
+  roadmap · kpi · bignum · trend · segment · diagram (flow/nodes architecture) ·
+  imagefull · imagesplit · imagegrid · closing. Visual theme via --theme / meta.theme.
 """
 import argparse
 import json
@@ -175,6 +177,32 @@ class Deck:
             nh, nw = h, h * ix
         s.shapes.add_picture(png, Inches(x + (w - nw) / 2), Inches(y + (h - nh) / 2),
                              Inches(nw), Inches(nh))
+
+    def pic_cover(self, s, png, x, y, w, h):
+        """Fill the box with the image, cropping the overflow (cover-fit)."""
+        from PIL import Image
+        iw, ih = Image.open(png).size
+        box_ar, img_ar = w / h, iw / ih
+        pic = s.shapes.add_picture(png, Inches(x), Inches(y), Inches(w), Inches(h))
+        if img_ar > box_ar:
+            crop = (1 - box_ar / img_ar) / 2
+            pic.crop_left = crop; pic.crop_right = crop
+        else:
+            crop = (1 - img_ar / box_ar) / 2
+            pic.crop_top = crop; pic.crop_bottom = crop
+        return pic
+
+    def _img_or_placeholder(self, s, sp, x, y, w, h):
+        """cover-fit sp['image'] into the box, or draw a labelled placeholder panel."""
+        img = sp.get("image")
+        if img and os.path.exists(img):
+            self.pic_cover(s, img, x, y, w, h)
+            return True
+        self.rect(s, x, y, w, h, self.p["surface"])
+        tf = self.box(s, x + 0.3, y + h / 2 - 0.3, w - 0.6, 0.6, anchor=MSO_ANCHOR.MIDDLE)
+        self.para(tf, "[image]\n" + sp.get("image_prompt", sp.get("title", "")), 11,
+                  self.p["muted"], first=True, align=PP_ALIGN.CENTER)
+        return False
 
     # ---- theme helpers ----
     def cslide(self):
@@ -629,6 +657,113 @@ class Deck:
         except Exception as e:
             sys.stderr.write(f"[segment degraded: {e}]\n")
 
+    def imagefull(self, sp):
+        """Full-bleed image with a solid caption band + title overlay (image-forward)."""
+        pal = self.p
+        s = self.slide(pal["divider_bg"])
+        self._img_or_placeholder(s, sp, 0, 0, SW, SH)
+        self.rect(s, 0, SH - 2.4, SW, 2.4, pal["divider_bg"])
+        self.rect(s, 0.7, SH - 2.05, 0.9, 0.09, self._bar_on(pal["divider_bg"]))
+        if sp.get("eyebrow"):
+            tf = self.box(s, 0.7, SH - 1.85, 11, 0.35)
+            self.para(tf, sp["eyebrow"].upper(), 12, pal["divider_ink"], bold=True,
+                      first=True, tracking=160)
+        tf = self.box(s, 0.66, SH - 1.5, 12, 1.2)
+        self.para(tf, sp["title"], 38, pal["divider_ink"], bold=True, first=True, ls=1.05)
+        if sp.get("subtitle"):
+            self.para(tf, sp["subtitle"], 15, pal["divider_ink"], sb=8)
+
+    def imagesplit(self, sp):
+        """Half image (cover-fit) + half text (title + items)."""
+        pal = self.p
+        s = self.cslide()
+        half = SW / 2
+        side = sp.get("side", "right")
+        ix = half if side == "right" else 0
+        tx = 0.72 if side == "right" else half + 0.6
+        self._img_or_placeholder(s, sp, ix, 0, half, SH)
+        if sp.get("eyebrow"):
+            tf = self.box(s, tx, 0.95, half - 1.3, 0.4)
+            self.para(tf, sp["eyebrow"].upper(), 11, self.accent_ink, bold=True, first=True,
+                      tracking=120)
+        tf = self.box(s, tx, 1.45, half - 1.3, 1.4)
+        self.para(tf, sp["title"], 26, pal["ink"], bold=True, first=True)
+        self.rect(s, tx, 2.72, 0.9, 0.05, pal["accent"])
+        y = 3.15
+        for it in sp.get("items", []):
+            if isinstance(it, (list, tuple)):
+                tf = self.box(s, tx, y, half - 1.3, 0.42)
+                self.para(tf, it[0], 15, pal["ink"], bold=True, first=True)
+                tf = self.box(s, tx, y + 0.44, half - 1.3, 0.8)
+                self.para(tf, it[1], 12, pal["sub"], first=True, ls=1.35)
+                y += 1.3
+            else:
+                tf = self.box(s, tx, y, half - 1.3, 0.5)
+                self.para(tf, "· " + it, 13, pal["sub"], first=True)
+                y += 0.56
+
+    def imagegrid(self, sp):
+        """A grid of images with captions."""
+        pal = self.p
+        s = self.cslide()
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""), sp.get("page", ""))
+        imgs = sp["images"]
+        cols = sp.get("cols", 2)
+        rows = (len(imgs) + cols - 1) // cols
+        gx0, gy0 = 0.62, 2.85
+        gw = (12.1 - (cols - 1) * 0.4) / cols
+        gh = (6.9 - gy0) / rows - 0.35
+        for i, im in enumerate(imgs):
+            r, c = divmod(i, cols)
+            x = gx0 + c * (gw + 0.4)
+            y = gy0 + r * (gh + 0.55)
+            self._img_or_placeholder(s, {"image": im.get("image"), "title": im.get("caption", "")},
+                                     x, y, gw, gh)
+            if im.get("caption"):
+                tf = self.box(s, x, y + gh + 0.06, gw, 0.4)
+                self.para(tf, im["caption"], 12, pal["sub"], first=True)
+
+    def diagram(self, sp):
+        """Architecture / process diagram. `flow`: auto horizontal boxes + arrows.
+        `nodes`+`edges`: explicit boxes at [label,x,y,w,h] + connectors [i,j]."""
+        pal = self.p
+        s = self.cslide()
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""), sp.get("page", ""))
+        if sp.get("flow"):
+            boxes = sp["flow"]
+            n = len(boxes)
+            gap = 0.5
+            bw = (12.1 - gap * (n - 1)) / n
+            bh, y = 2.0, 3.7
+            for i, lab in enumerate(boxes):
+                x = 0.62 + i * (bw + gap)
+                self.rect(s, x, y, bw, bh, pal["surface"])
+                self.rect(s, x, y, bw, 0.09, pal["accent"])
+                tf = self.box(s, x + 0.2, y, bw - 0.4, bh, anchor=MSO_ANCHOR.MIDDLE)
+                if isinstance(lab, (list, tuple)):
+                    self.para(tf, lab[0], 15, pal["ink"], bold=True, first=True, align=PP_ALIGN.CENTER)
+                    self.para(tf, lab[1], 11.5, pal["sub"], sb=5, align=PP_ALIGN.CENTER, ls=1.3)
+                else:
+                    self.para(tf, lab, 15, pal["ink"], bold=True, first=True, align=PP_ALIGN.CENTER)
+                if i < n - 1:
+                    ar = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(x + bw + 0.06),
+                                            Inches(y + bh / 2 - 0.14), Inches(gap - 0.12), Inches(0.28))
+                    ar.fill.solid(); ar.fill.fore_color.rgb = C(pal["accent"])
+                    ar.line.fill.background(); ar.shadow.inherit = False
+        elif sp.get("nodes"):
+            centers = []
+            for nd in sp["nodes"]:
+                lab, x, y, w, h = nd
+                self.rect(s, x, y, w, h, pal["surface"])
+                self.rect(s, x, y, 0.08, h, pal["accent"])
+                tf = self.box(s, x + 0.22, y, w - 0.32, h, anchor=MSO_ANCHOR.MIDDLE)
+                self.para(tf, lab, 13, pal["ink"], bold=True, first=True)
+                centers.append((x + w / 2, y + h / 2))
+            for e in sp.get("edges", []):
+                (x1, y1), (x2, y2) = centers[e[0]], centers[e[1]]
+                cn = s.shapes.add_connector(2, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+                cn.line.color.rgb = C(pal["accent"]); cn.line.width = Pt(1.5)
+
     def closing(self, sp):
         pal = self.p
         s = self.dslide(pal["divider_bg"], "cover")
@@ -650,7 +785,9 @@ class Deck:
                     "roadmap": self.roadmap, "closing": self.closing,
                     "textfigure": self.textfigure, "table": self.table,
                     "numbered": self.numbered, "bignum": self.bignum,
-                    "trend": self.trend, "segment": self.segment}
+                    "trend": self.trend, "segment": self.segment,
+                    "imagefull": self.imagefull, "imagesplit": self.imagesplit,
+                    "imagegrid": self.imagegrid, "diagram": self.diagram}
         for sl in spec["slides"]:
             fn = dispatch.get(sl["layout"])
             if not fn:
