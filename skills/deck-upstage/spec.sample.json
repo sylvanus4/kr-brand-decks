@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "company": "업스테이지",
+    "eyebrow": "Upstage"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Upstage",
+      "title": "AI로 일하는\n방식을 바꾸다",
+      "subtitle": "LLM (Solar) · Document AI · AI Platform · Enterprise"
+    },
+    {
+      "layout": "toc",
+      "eyebrow": "Upstage",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "사업 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "05"
+        ],
+        [
+          "03",
+          "성장 전략",
+          "07"
+        ],
+        [
+          "04",
+          "성장 로드맵",
+          "09"
+        ],
+        [
+          "05",
+          "미래 비전",
+          "11"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "사업 개요",
+      "subtitle": "자체 LLM과 Document AI 중심의 AI 역량"
+    },
+    {
+      "layout": "textfigure",
+      "eyebrow": "01 · 사업 개요",
+      "title": "업스테이지가 그리는 미래",
+      "subtitle": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+      "items": [
+        [
+          "Why · 시장의 변화",
+          "생성형 AI 도입이 실험을 넘어 실제 업무 적용 단계로 전환되고 있습니다."
+        ],
+        [
+          "What · 사업 영역",
+          "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI"
+        ],
+        [
+          "How · 실행 전략",
+          "자체 LLM과 Document AI로 신뢰할 수 있는 엔터프라이즈 AI를 제공합니다."
+        ]
+      ],
+      "panel_title": "핵심 지향",
+      "panel_lede": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+      "panel_points": [
+        "LLM (Solar)",
+        "Document AI",
+        "AI Platform",
+        "Enterprise"
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "02",
+      "title": "핵심 사업 영역",
+      "subtitle": "자체 LLM과 Document AI 중심의 AI 역량"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "02 · 핵심 사업 영역",
+      "title": "핵심 사업 영역",
+      "subtitle": "자체 LLM과 Document AI 중심의 AI 역량",
+      "cols": 2,
+      "cells": [
+        [
+          "sparkles",
+          "LLM (Solar)",
+          "경쟁력 있는 자체 파운데이션 모델로 생성형 AI를 제공합니다."
+        ],
+        [
+          "file-text",
+          "Document AI",
+          "문서 OCR·파싱으로 복잡한 문서를 이해하고 자동화합니다."
+        ],
+        [
+          "layers",
+          "AI 플랫폼",
+          "AI 개발·배포 도구로 엔드투엔드 워크플로를 지원합니다."
+        ],
+        [
+          "building-2",
+          "엔터프라이즈 AI",
+          "산업별 요구에 맞춘 안전한 기업용 AI를 제공합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "eyebrow": "03 · 성장 전략",
+      "title": "현재에서 확대 방향으로",
+      "subtitle": "각 사업 영역의 현재와 확대 방향 (표기는 예시)",
+      "headers": [
+        "사업 영역",
+        "현재",
+        "확대 방향"
+      ],
+      "rows": [
+        [
+          "LLM (Solar)",
+          "파운데이션 모델",
+          "도메인 특화·경량 모델 확대"
+        ],
+        [
+          "Document AI",
+          "문서 OCR·파싱",
+          "복잡 문서 이해 고도화"
+        ],
+        [
+          "AI 플랫폼",
+          "AI 개발 도구",
+          "엔드투엔드 플랫폼 확장"
+        ],
+        [
+          "엔터프라이즈",
+          "B2B 솔루션",
+          "산업별 AI 적용 확대"
+        ]
+      ]
+    },
+    {
+      "layout": "numbered",
+      "eyebrow": "03 · 성장 전략",
+      "title": "성장 전략 4대 축",
+      "subtitle": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+      "lede": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+      "items": [
+        [
+          "파운데이션 모델",
+          "Solar LLM으로 경쟁력 있는 자체 모델을 고도화합니다."
+        ],
+        [
+          "Document AI",
+          "문서 이해 기술로 실질적 업무 자동화를 제공합니다."
+        ],
+        [
+          "엔터프라이즈 확산",
+          "금융·제조 등 산업별 AI 도입을 확대합니다."
+        ],
+        [
+          "글로벌",
+          "해외 시장에 AI 솔루션을 진출시킵니다."
+        ]
+      ]
+    },
+    {
+      "layout": "roadmap",
+      "eyebrow": "04 · 성장 로드맵",
+      "title": "성장 로드맵",
+      "subtitle": "단계적 성장 전개 (일정은 브랜드 테마 예시)",
+      "phases": [
+        [
+          "Solar 고도화",
+          2026.0,
+          2027.4
+        ],
+        [
+          "Document AI",
+          2026.4,
+          2028.0
+        ],
+        [
+          "플랫폼 확장",
+          2027.0,
+          2029.0
+        ],
+        [
+          "글로벌 확산",
+          2028.0,
+          2030.0
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "04 · 성장 로드맵",
+      "title": "성장 지표",
+      "subtitle": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+      "metrics": [
+        [
+          "엔터프라이즈 고객",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "모델 성능",
+          "기준",
+          "+40%",
+          100,
+          140
+        ],
+        [
+          "글로벌 매출",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "AI로 일하는 방식을\n새롭게 만듭니다",
+      "subtitle": "Upstage",
+      "contact": "brand-inspired sample deck · 상표는 업스테이지 (Upstage)의 자산입니다"
+    }
+  ]
+}

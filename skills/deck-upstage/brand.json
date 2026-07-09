@@ -1,0 +1,16 @@
+{
+  "slug": "upstage",
+  "label": "Upstage",
+  "label_ko": "업스테이지",
+  "tagline": "파운데이션 모델과 Document AI로 여는 엔터프라이즈 AI",
+  "triggers_ko": [
+    "업스테이지 발표자료",
+    "Upstage 덱",
+    "업스테이지 회사소개",
+    "Upstage brand deck"
+  ],
+  "art_direction": "clean modern AI-tech illustration, blue-violet accent, minimal geometric, no logos",
+  "accent_source": "Upstage accent #4D65FF — upstage.ai 웹 CSS 관찰값(공식 CI hex 미공개, 추정)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "업스테이지 (Upstage)"
+}

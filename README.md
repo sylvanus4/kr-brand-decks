@@ -1,11 +1,11 @@
 # kr-brand-decks
 
-**한국 주요 20개 기업 브랜드 테마 PPTX 데크 스킬 모음** — Claude Code & Cursor용.
-20 Claude Code / Cursor skills that generate polished, on-brand PowerPoint decks
+**한국 주요 23개 기업 브랜드 테마 PPTX 데크 스킬 모음** — Claude Code & Cursor용.
+23 Claude Code / Cursor skills that generate polished, on-brand PowerPoint decks
 themed after major Korean enterprises. Content is yours; the palette, layout, and
 format are owned by code — so every deck comes out clean and consistent.
 
-![Gallery of 20 brand cover slides](docs/gallery.png)
+![Gallery of 23 brand cover slides](docs/gallery.png)
 
 > ⚠️ **비공식(unofficial) 브랜드 영감 테마입니다.** 어떤 회사와도 제휴·보증 관계가 없으며,
 > 상표·로고는 각 소유주의 자산입니다. 본 저장소는 **로고 파일을 포함하지 않고** 공개된 브랜드
@@ -15,9 +15,9 @@ format are owned by code — so every deck comes out clean and consistent.
 
 ## ✨ 무엇인가
 
-- **20개 독립 스킬** — 회사마다 `deck-<company>` 스킬 하나. 검증된 브랜드 컬러 팔레트 + 레퍼런스급 네이티브 레이아웃.
+- **23개 독립 스킬** — 회사마다 `deck-<company>` 스킬 하나. 검증된 브랜드 컬러 팔레트 + 레퍼런스급 네이티브 레이아웃.
 - **레퍼런스급 레이아웃 세트** — 표지·목차·섹션 디바이더 · **Lucide 라인 아이콘 그리드** · **좌측 텍스트 + 우측 3D 일러스트(textfigure)** · **AS-IS→차세대 비교표** · **간트 로드맵** · **before/after 임팩트 차트** · 클로징. 색은 팔레트가, 포맷은 코드가 소유.
-- **회사별 실제 샘플 PDF** 동봉 — `skills/deck-<company>/examples/`. **삼성전자 반도체·SK하이닉스**는 전체 레이아웃·아이콘·차트·AI 히어로 이미지를 담은 **11장 풀 쇼케이스**, 나머지는 6장 기본 샘플.
+- **회사별 실제 11장 샘플 PDF** 동봉 — `skills/deck-<company>/examples/`. 전 기업이 아이콘·비교표·간트·임팩트 차트를 갖춘 **11장 리치 데크**. **삼성전자 반도체·SK하이닉스**는 여기에 **AI 히어로 이미지**까지 얹은 풀 쇼케이스(이미지는 선택 기능).
 - **템플릿 불필요** — python-pptx로 슬라이드를 처음부터 생성. 독점 템플릿·외부 서비스 의존 없음.
 - **안전** — 100% 로컬 실행, 데이터 외부 전송 없음, API 키 불필요(선택적 AI 이미지 제외).
 
@@ -73,16 +73,16 @@ python3 ../../_engine/render_deck.py \
 
 # 3) 품질 게이트 (PASS라야 배포)
 python3 ../../_engine/validate.py examples/samsung-semi-6p.pptx \
-  --palette palette.json --expect-slides 6
+  --palette palette.json --expect-slides 11
 ```
 
 Claude Code / Cursor에서는 그냥 이렇게 말하면 됩니다:
 > "삼성반도체 브랜드로 우리 제품 소개 6장 만들어줘" → `deck-samsung-semi` 스킬이 스펙을 채우고 렌더까지 수행.
 
 ### 레이아웃
-`cover · toc · divider · icongrid · kpi · bullets · roadmap · closing` — 스펙 스키마는 [`_engine/render_deck.py`](_engine/render_deck.py) docstring 참조.
+`cover · toc · divider · icongrid · textfigure · table · numbered · roadmap · kpi · closing` — 스펙 스키마는 [`_engine/render_deck.py`](_engine/render_deck.py) docstring 참조.
 
-## 🏢 수록 기업 (20)
+## 🏢 수록 기업 (23)
 
 | 스킬 | 회사 | accent | 스킬 | 회사 | accent |
 |---|---|---|---|---|---|
@@ -96,6 +96,8 @@ Claude Code / Cursor에서는 그냥 이렇게 말하면 됩니다:
 | `deck-kakao` | 카카오 | `#FEE500` | `deck-cj-cheiljedang` | CJ제일제당 | `#EF151E` |
 | `deck-hyundai-motor` | 현대자동차 | `#002C5F` | `deck-posco` | 포스코 | `#053080` |
 | `deck-kia` | 기아 | `#EA0029` | `deck-hd-hyundai` | HD현대 | `#00AD1D` |
+| `deck-upstage` | 업스테이지 | `#4D65FF` | `deck-toss` | 토스 | `#0064FF` |
+| `deck-ncsoft` | 엔씨소프트 | `#8243F2` | | | |
 
 컬러 출처와 타이포·아트디렉션은 각 스킬의 `brand.md` 및 [BRANDS.md](BRANDS.md) 참조. 일부 값은
 공식 페이지가 hex를 노출하지 않아 교차검증/추정이며, 각 `brand.md`에 신뢰 수준을 표기했습니다.
@@ -133,7 +135,7 @@ python3 _engine/place_images.py --in <deck>.pptx --plan images.json --out <deck>
 
 ## ➕ 새 회사 추가
 
-홈페이지/브랜드 색만 있으면 20개사와 동일한 방식으로 한 줄에 스캐폴딩됩니다:
+홈페이지/브랜드 색만 있으면 23개사와 동일한 방식으로 한 줄에 스캐폴딩됩니다:
 ```bash
 python3 tools/new_company.py --slug foo --label "Foo" --label-ko "푸" \
   --accent EA002C --tagline "..." --owner "..." --homepage https://...
