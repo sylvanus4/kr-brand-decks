@@ -120,10 +120,11 @@ BRANDS = {
     },
     "kakao": {
         "label": "Kakao", "label_ko": "카카오",
-        "accent": "FEE500", "accent_ink": "191919", "on_accent": "191919", "divider_bg": "191919",
+        "accent": "FEE500", "accent_ink": "3B1E1E", "on_accent": "191919",
+        "divider_bg": "FEE500", "divider_ink": "191919",
         "tagline": "관계를 잇는 플랫폼으로 만드는 일상의 혁신",
         "owner": "카카오 (Kakao Corp.)",
-        "src": "Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우엔 어두운 텍스트 규정), brandcolorcode.com 교차확인. Near-black #1E1E1E 보조",
+        "src": "Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우 배경 + 어두운 텍스트 규정), brandcolorcode.com 교차확인. 표지·섹션은 노랑 배경 + 다크 텍스트, 본문은 흰 배경",
         "art": "friendly rounded flat illustration, Kakao yellow with dark ink, warm minimal, no logos",
         "font_note": "Pretendard 폴백",
         "cover_title": "관계를 잇고,\n일상을 바꾸다", "cover_sub": "Talk · Platform · Content · AI",
