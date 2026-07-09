@@ -1,0 +1,9 @@
+{
+  "name": "kr-brand-decks",
+  "description": "한국 주요 기업 브랜드 테마 PPTX 데크 스킬 번들 (23개 회사 스킬 + 공용 렌더 엔진). Unofficial Korean-enterprise brand-themed PPTX deck skills with the shared engine bundled so it travels with the skills.",
+  "version": "0.2.0",
+  "author": {"name": "sylvanus4"},
+  "homepage": "https://github.com/sylvanus4/kr-brand-decks",
+  "repository": "https://github.com/sylvanus4/kr-brand-decks",
+  "license": "MIT"
+}
