@@ -34,10 +34,11 @@ python3 ../../_engine/render_deck.py \
 
 # 3) 검증 게이트 (PASS라야 배포)
 python3 ../../_engine/validate.py examples/kia-6p.pptx \
-  --palette palette.json --expect-slides 6
+  --palette palette.json --expect-slides 11
 ```
 
-레이아웃: `cover · toc · divider · icongrid · kpi · bullets · roadmap · closing`.
+레이아웃: `cover · toc · divider · icongrid · textfigure · table · numbered · roadmap · kpi · closing`
+(아이콘 = Lucide 라인 아이콘, 표·간트·임팩트 = 온브랜드 차트).
 스펙 스키마와 공용 엔진은 리포 루트 `_engine/render_deck.py` docstring 참조.
 
 > ⚠️ **비공식 브랜드 영감 테마입니다.** 본 스킬은 Kia과 제휴·보증 관계가 없으며,

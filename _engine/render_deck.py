@@ -234,8 +234,25 @@ class Deck:
             tf = self.box(s, 0.62, y + 0.44, 5.6, step - 0.5)
             self.para(tf, body, 12, pal["sub"], first=True, ls=1.4)
             y += step
-        if sp.get("image"):  # optional inline png
-            self.pic_contain(s, sp["image"], 6.7, 2.9, 6.0, 3.9)
+        if sp.get("image"):  # optional inline png (right half)
+            self.pic_contain(s, sp["image"], 6.95, 3.0, 5.7, 3.75)
+        elif sp.get("panel", True) and not sp.get("image_zone"):
+            # native right panel when no image is placed
+            px, py, pw, ph = 6.95, 2.98, 5.75, 3.7
+            self.rect(s, px, py, pw, ph, pal["surface"])
+            self.rect(s, px, py, 0.09, ph, pal["accent"])
+            tf = self.box(s, px + 0.42, py + 0.36, pw - 0.8, 0.4)
+            self.para(tf, sp.get("panel_title", "핵심 지향"), 12,
+                      self.accent_ink, bold=True, first=True, tracking=60)
+            tf = self.box(s, px + 0.42, py + 0.86, pw - 0.8, 1.4)
+            self.para(tf, sp.get("panel_lede", sp.get("subtitle", "")), 15,
+                      pal["ink"], bold=True, first=True, ls=1.3)
+            pts = sp.get("panel_points", [])
+            ty = py + ph - 0.28 - 0.42 * len(pts)
+            for p in pts:
+                tf = self.box(s, px + 0.42, ty, pw - 0.8, 0.4)
+                self.para(tf, "· " + p, 12, pal["sub"], first=True)
+                ty += 0.42
 
     def table(self, sp):
         pal = self.p

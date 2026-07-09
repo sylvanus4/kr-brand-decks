@@ -13,7 +13,7 @@
     {"layout": "divider", "num": "01", "title": "사업 개요",
      "subtitle": "종합 반도체 기업으로서의 지향점"},
 
-    {"layout": "textfigure", "eyebrow": "01 · 사업 개요",
+    {"layout": "textfigure", "eyebrow": "01 · 사업 개요", "image_zone": true,
      "title": "AI 시대, 반도체가 여는 새로운 가능성",
      "subtitle": "폭증하는 데이터와 인공지능 연산을 뒷받침하는 종합 반도체 역량을 제안합니다.",
      "items": [
