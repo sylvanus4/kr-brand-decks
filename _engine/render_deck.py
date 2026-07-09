@@ -178,8 +178,63 @@ class Deck:
 
     # ---- theme helpers ----
     def cslide(self):
-        """Content-slide background per theme (bg or surface token)."""
-        return self.slide(self.p.get(self.t["content_bg"], self.p["bg"]))
+        """Content-slide background per theme + theme decoration."""
+        s = self.slide(self.p.get(self.t["content_bg"], self.p["bg"]))
+        self.theme_decorate(s, "content")
+        return s
+
+    def dslide(self, bg, where):
+        """Create a slide with bg and apply the theme's signature decoration."""
+        s = self.slide(bg)
+        self.theme_decorate(s, where)
+        return s
+
+    def theme_decorate(self, s, where):
+        """Signature decorative details per theme (behind content). `where` in
+        {content, cover, divider}. No-op unless the theme sets `decor`."""
+        d = self.t.get("decor")
+        if not d:
+            return
+        pal = self.p
+        dark = where in ("cover", "divider")
+        if d == "blueprint":
+            gc = pal["surface"] if dark else pal["border"]
+            for gx in range(1, 13):
+                self.rect(s, gx * (SW / 13), 0, 0.006, SH, gc)
+            for gy in range(1, 8):
+                self.rect(s, 0, gy * (SH / 8), SW, 0.006, gc)
+            for cx in (0.3, SW - 0.42):
+                for cy in (0.3, SH - 0.42):
+                    self.rect(s, cx, cy + 0.055, 0.12, 0.012, pal["accent"])
+                    self.rect(s, cx + 0.055, cy, 0.012, 0.12, pal["accent"])
+        elif d == "swiss":
+            col = pal["divider_ink"] if dark else pal["border"]
+            for gx in (SW * 0.33, SW * 0.5, SW * 0.67):
+                self.rect(s, gx, 0.3, 0.006, SH - 0.6, col)
+        elif d == "neon" and dark:
+            for (x, y, w, h) in [(0.35, 0.35, SW - 0.7, 0.02), (0.35, SH - 0.37, SW - 0.7, 0.02),
+                                 (0.35, 0.35, 0.02, SH - 0.7), (SW - 0.37, 0.35, 0.02, SH - 0.7)]:
+                self.rect(s, x, y, w, h, pal["accent"])
+        elif d == "brutalist" and dark:
+            # thick accent bars (visible on both the white band-top and the color band)
+            self.rect(s, 0.0, 0.0, SW, 0.14, pal["accent"])
+            self.rect(s, 0.0, SH - 0.14, SW, 0.14, pal["accent"])
+        elif d == "luxury":
+            fc = pal["accent"] if dark else pal["border"]
+            for (x, y, w, h) in [(0.5, 0.5, SW - 1.0, 0.012), (0.5, SH - 0.51, SW - 1.0, 0.012),
+                                 (0.5, 0.5, 0.012, SH - 1.0), (SW - 0.51, 0.5, 0.012, SH - 1.0)]:
+                self.rect(s, x, y, w, h, fc)
+        elif d == "terminal" and dark:
+            for i, cc in enumerate((pal["accent"], pal["muted"], pal["divider_ink"])):
+                dot = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(0.5 + i * 0.28), Inches(0.42),
+                                         Inches(0.16), Inches(0.16))
+                dot.fill.solid(); dot.fill.fore_color.rgb = C(cc); dot.line.fill.background()
+                dot.shadow.inherit = False
+            tf = self.box(s, 0.5, 6.72, 11, 0.4)
+            self.para(tf, "user@deck:~$ present ▮", 13, pal["accent"], first=True, tracking=20)
+        elif d == "newsprint" and not dark:
+            self.rect(s, 0.5, 1.7, SW - 1.0, 0.02, pal["ink"])
+            self.rect(s, SW * 0.5, 2.3, 0.006, SH - 3.0, pal["border"])
 
     def _eyebrow_text(self, eyebrow):
         t = self.t
@@ -243,7 +298,7 @@ class Deck:
         cx = 0.62
 
         if style == "minimal":  # light bg, ink text, small accent — editorial/luxury
-            s = self.slide(pal["bg"])
+            s = self.dslide(pal["bg"], "cover")
             self.rect(s, cx, 0.72, 0.9, 0.09, pal["accent"])
             tf = self.box(s, cx, 1.0, 11.5, 0.5)
             self.para(tf, ey, 13, self.accent_ink, bold=True, first=True, tracking=180, align=al)
@@ -254,7 +309,7 @@ class Deck:
             return
 
         if style == "band":  # light top + brand-color bottom band holding the title
-            s = self.slide(pal["bg"])
+            s = self.dslide(pal["bg"], "cover")
             bh = 3.0
             self.rect(s, 0, SH - bh, SW, bh, pal["divider_bg"])
             tf = self.box(s, cx, 0.95, 11.5, 0.5)
@@ -266,7 +321,7 @@ class Deck:
             return
 
         if style == "sidebar":  # left color strip + light main area, ink title
-            s = self.slide(pal["bg"])
+            s = self.dslide(pal["bg"], "cover")
             self.rect(s, 0, 0, 3.3, SH, pal["divider_bg"])
             self.rect(s, 0.6, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
             tf = self.box(s, 0.6, 1.0, 2.4, 3.0)
@@ -278,7 +333,7 @@ class Deck:
             return
 
         # solid / dark (default): full brand-color cover, light text
-        s = self.slide(pal["divider_bg"])
+        s = self.dslide(pal["divider_bg"], "cover")
         self.rect(s, cx + 0.08, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
         tf = self.box(s, cx + 0.04, 0.95, 11.5, 0.5)
         self.para(tf, ey, 13, pal["divider_ink"], bold=True, first=True, tracking=180, align=al)
@@ -314,7 +369,7 @@ class Deck:
         num, title, sub = sp.get("num", ""), sp["title"], sp.get("subtitle")
         if style == "minimal":  # light bg, ink, thin section number — airy
             bg = sp.get("bg", pal["bg"])
-            s = self.slide(bg)
+            s = self.dslide(bg, "divider")
             self.rect(s, 0.62, 3.05, 0.9, 0.09, pal["accent"])
             tf = self.box(s, 0.62, 3.3, 12, 3.2)
             self.para(tf, num, 22, self.accent_ink, bold=True, first=True, tracking=60)
@@ -323,7 +378,7 @@ class Deck:
                 self.para(tf, sub, 15, pal["sub"], sb=10, ls=1.3)
             return
         bg = sp.get("bg", pal["divider_bg"])
-        s = self.slide(bg)
+        s = self.dslide(bg, "divider")
         ink = pal["divider_ink"]
         if style == "huge":  # oversized chapter numeral filling the slide
             tf = self.box(s, 0.5, 0.4, 12.4, 5.2)
@@ -576,7 +631,7 @@ class Deck:
 
     def closing(self, sp):
         pal = self.p
-        s = self.slide(pal["divider_bg"])
+        s = self.dslide(pal["divider_bg"], "cover")
         if self.t["closing_mark"]:
             ic = resolve_icon(sp.get("title", "")) or "flag"
             self._icon(s, ic, 0.62, 2.0, 0.62, self._bar_on(pal["divider_bg"]))

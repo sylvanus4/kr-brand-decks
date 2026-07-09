@@ -76,7 +76,8 @@
       "divider_style": "huge",
       "cover_title_pt": 60,
       "eyebrow_track": 200,
-      "section_icons": true
+      "section_icons": true,
+      "decor": "brutalist"
     },
     "swiss-grid": {
       "label": "Swiss International",
@@ -90,7 +91,8 @@
       "cover_style": "minimal",
       "accent_style": "block",
       "divider_style": "minimal",
-      "section_icons": true
+      "section_icons": true,
+      "decor": "swiss"
     },
     "tech-gradient": {
       "label": "Tech Gradient",
@@ -167,7 +169,8 @@
       "accent_style": "tick",
       "content_bg": "surface",
       "eyebrow_upper": false,
-      "section_icons": true
+      "section_icons": true,
+      "decor": "blueprint"
     },
     "kraft-warm": {
       "label": "Kraft & Warm",
@@ -196,7 +199,8 @@
       "cover_style": "solid",
       "accent_style": "underline",
       "divider_style": "solid",
-      "section_icons": true
+      "section_icons": true,
+      "decor": "neon"
     },
     "playful-rounded": {
       "label": "Playful Rounded",
@@ -288,7 +292,8 @@
       "accent_style": "tick",
       "divider_style": "minimal",
       "cover_title_pt": 48,
-      "hairline": false
+      "hairline": false,
+      "decor": "luxury"
     },
     "geometric-bold": {
       "label": "Geometric Bold",
@@ -329,7 +334,8 @@
       "cover_style": "solid",
       "accent_style": "tick",
       "eyebrow_upper": false,
-      "content_bg": "bg"
+      "content_bg": "bg",
+      "decor": "terminal"
     },
     "newsprint": {
       "label": "Newsprint",
@@ -344,7 +350,8 @@
       "cover_style": "minimal",
       "content_bg": "surface",
       "accent_style": "underline",
-      "divider_style": "minimal"
+      "divider_style": "minimal",
+      "decor": "newsprint"
     },
     "gradient-vibrant": {
       "label": "Gradient Vibrant",

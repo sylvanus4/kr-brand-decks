@@ -50,5 +50,17 @@ FORMAL = 재무·IR·정부·데이터 안전(이모지 없음). CASUAL = 소셜
 | `newsprint` | 오늘자 신문 1면 | FORMAL | 뉴스·미디어·정책요약 |
 | `gradient-vibrant` | 에너지 넘치는 컬러 | CASUAL | 소셜·이벤트·크리에이터 |
 
+## 시그니처 장식 (theme decorate)
+
+일부 테마는 고유한 **배경 장식**을 그립니다(`decor` 태그, `_engine/render_deck.py`의
+`theme_decorate`):
+- `blueprint` — 좌표 그리드 + 코너 눈금(설계도 느낌)
+- `terminal-mono` — 터미널 3닷 + `user@deck:~$ present ▮` 프롬프트
+- `swiss-grid` — 노출된 세로 컬럼 그리드
+- `neon-dark` — 얇은 accent 프레임(글로우 근사)
+- `bold-brutalist` — 상·하단 굵은 accent 바
+- `luxury-serif` — 인셋 헤어라인 프레임
+- `newsprint` — 마스트헤드 룰 + 컬럼 구분선
+
 > 참고: 폰트는 Pretendard 단일이라 세리프/모노/그라디언트/텍스처가 필요한 테마는 타이포·배치·
-> accent·밀도로 **느낌을 근사**합니다(python-pptx 네이티브 도형 범위 내). 색은 팔레트가 소유.
+> accent·밀도·장식으로 **느낌을 근사**합니다(python-pptx 네이티브 도형 범위 내). 색은 팔레트가 소유.
