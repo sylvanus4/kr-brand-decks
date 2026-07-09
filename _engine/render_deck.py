@@ -51,6 +51,7 @@ class Deck:
         self.prs.slide_height = Emu(int(SH * EMU_IN))
         self.blank = self.prs.slide_layouts[6]
         self._n = 0
+        self.icons_dir = os.path.join(tmpdir, "icons")
         # accent_ink = accent used as TEXT on a light bg (dark-enough variant for
         # bright brands like yellow/green). on_accent = text drawn ON an accent fill.
         self.accent_ink = pal.get("accent_ink", pal["accent"])
@@ -126,8 +127,8 @@ class Deck:
         tf = self.box(s, 0.62, 0.92, 12.1, 1.0)
         self.para(tf, title, 25, pal["ink"], bold=True, first=True)
         if subtitle:
-            tf = self.box(s, 0.62, 1.76, 12.1, 0.6)
-            self.para(tf, subtitle, 13.5, pal["sub"], first=True)
+            tf = self.box(s, 0.62, 1.78, 12.1, 0.6)
+            self.para(tf, subtitle, 14, pal["sub"], first=True)
         self.rect(s, 0.62, 2.4, 1.1, 0.045, pal["accent"])            # accent tick
         self.rect(s, 1.72, 2.418, 11.0, 0.012, pal["border"])          # hairline
 
@@ -172,10 +173,22 @@ class Deck:
         ink = pal["divider_ink"]
         self.rect(s, 0.7, 3.05, 0.9, 0.12, pal["accent"] if bg != pal["accent"] else ink)
         tf = self.box(s, 0.62, 3.3, 12, 3.2)
-        self.para(tf, sp.get("num", ""), 56, ink, bold=True, first=True)
+        self.para(tf, sp.get("num", ""), 60, ink, bold=True, first=True)
         self.para(tf, sp["title"], 38, ink, bold=True, sb=2)
         if sp.get("subtitle"):
             self.para(tf, sp["subtitle"], 15, ink, sb=10, ls=1.3)
+
+    def _icon(self, s, name, x, y, size, color):
+        """Draw a Lucide line icon; fall back to an accent chip if unavailable."""
+        try:
+            import icons
+            png = icons.icon_png(name, color, int(size * 190), self.icons_dir)
+        except Exception:
+            png = None
+        if png:
+            s.shapes.add_picture(png, Inches(x), Inches(y), Inches(size), Inches(size))
+            return True
+        return False
 
     def icongrid(self, sp):
         pal = self.p
@@ -184,23 +197,84 @@ class Deck:
                     sp.get("page", ""))
         cells = sp["cells"]; cols = sp.get("cols", 2)
         rows = (len(cells) + cols - 1) // cols
-        gx0, gy0 = 0.62, 2.9
+        gx0, gy0 = 0.62, 2.92
         gw = (12.1 - (cols - 1) * 0.6) / cols
-        gy_step = (6.7 - gy0) / rows
+        gy_step = (6.75 - gy0) / rows
         for i, cell in enumerate(cells):
-            head, body = cell[0], cell[1]
+            has_icon = len(cell) >= 3
+            icon = cell[0] if has_icon else None
+            head, body = (cell[1], cell[2]) if has_icon else (cell[0], cell[1])
             r, c = divmod(i, cols)
             x = gx0 + c * (gw + 0.6)
             y = gy0 + r * gy_step
-            # accent chip marker with index
-            self.rect(s, x, y, 0.5, 0.5, pal["accent"])
-            tf = self.box(s, x, y, 0.5, 0.5, anchor=MSO_ANCHOR.MIDDLE)
-            self.para(tf, str(i + 1), 15, self.on_accent, bold=True, first=True,
-                      align=PP_ALIGN.CENTER)
-            tf = self.box(s, x + 0.68, y - 0.02, gw - 0.7, 0.55)
+            drew = self._icon(s, icon, x, y, 0.44, pal["ink"]) if icon else False
+            if not drew:
+                self.rect(s, x, y, 0.46, 0.46, pal["accent"])
+                tf = self.box(s, x, y, 0.46, 0.46, anchor=MSO_ANCHOR.MIDDLE)
+                self.para(tf, str(i + 1), 14, self.on_accent, bold=True, first=True,
+                          align=PP_ALIGN.CENTER)
+            tf = self.box(s, x, y + 0.62, gw, 0.45)
+            self.para(tf, head, 14.5, pal["ink"], bold=True, first=True)
+            tf = self.box(s, x, y + 1.08, gw, gy_step - 1.25)
+            self.para(tf, body, 12, pal["sub"], first=True, ls=1.4)
+
+    def textfigure(self, sp):
+        """Left column of head/body blocks + right zone reserved for an image
+        (placed by place_images with slide=this, box in the right half)."""
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        items = sp["items"]
+        y = 2.95
+        step = min(1.35, (6.7 - y) / len(items))
+        for head, body in items:
+            tf = self.box(s, 0.62, y, 5.6, 0.42)
             self.para(tf, head, 15, pal["ink"], bold=True, first=True)
-            tf = self.box(s, x, y + 0.66, gw, gy_step - 0.85)
-            self.para(tf, body, 11.5, pal["sub"], first=True, ls=1.35)
+            tf = self.box(s, 0.62, y + 0.44, 5.6, step - 0.5)
+            self.para(tf, body, 12, pal["sub"], first=True, ls=1.4)
+            y += step
+        if sp.get("image"):  # optional inline png
+            self.pic_contain(s, sp["image"], 6.7, 2.9, 6.0, 3.9)
+
+    def table(self, sp):
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        self._n += 1
+        png = os.path.join(self.tmp, f"table_{self._n}.png")
+        try:
+            import charts
+            charts.comparison_table(sp["headers"], sp["rows"], png, ink=pal["ink"],
+                                    sub=pal["sub"], muted=pal["muted"], accent=pal["accent"],
+                                    line=pal["border"], panel=pal["surface"])
+            self.pic_contain(s, png, 0.62, 2.7, 12.1, 4.0)
+        except Exception as e:
+            sys.stderr.write(f"[table degraded: {e}]\n")
+
+    def numbered(self, sp):
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        items = sp["items"]
+        lede = sp.get("lede")
+        x = 4.4 if lede else 0.62
+        if lede:
+            tf = self.box(s, 0.62, 2.95, 3.3, 3.6)
+            self.para(tf, lede, 12.5, pal["sub"], first=True, ls=1.5)
+        y = 2.9
+        step = (6.75 - y) / len(items)
+        for i, it in enumerate(items):
+            head, body = it[0], it[1]
+            yy = y + step * i
+            tf = self.box(s, x, yy, 0.95, 0.6)
+            self.para(tf, f"{i + 1:02d}", 21, self.accent_ink, bold=True, first=True)
+            tf = self.box(s, x + 1.0, yy, 12.7 - x - 1.0, 0.42)
+            self.para(tf, head, 14, pal["ink"], bold=True, first=True)
+            tf = self.box(s, x + 1.0, yy + 0.42, 12.7 - x - 1.0, step - 0.5)
+            self.para(tf, body, 11.5, pal["sub"], first=True, ls=1.32)
 
     def bullets(self, sp):
         pal = self.p
@@ -276,7 +350,9 @@ class Deck:
     def build(self, spec):
         dispatch = {"cover": self.cover, "toc": self.toc, "divider": self.divider,
                     "icongrid": self.icongrid, "kpi": self.kpi, "bullets": self.bullets,
-                    "roadmap": self.roadmap, "closing": self.closing}
+                    "roadmap": self.roadmap, "closing": self.closing,
+                    "textfigure": self.textfigure, "table": self.table,
+                    "numbered": self.numbered}
         for sl in spec["slides"]:
             fn = dispatch.get(sl["layout"])
             if not fn:
