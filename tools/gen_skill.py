@@ -17,7 +17,7 @@ def load(p):
         return json.load(f)
 
 
-def skill_md(pal, br):
+def skill_md(pal, br, nslides=6):
     slug = br["slug"]
     label = br["label"]
     ko = br["label_ko"]
@@ -69,10 +69,11 @@ python3 ../../_engine/render_deck.py \\
 
 # 3) 검증 게이트 (PASS라야 배포)
 python3 ../../_engine/validate.py examples/{slug}-6p.pptx \\
-  --palette palette.json --expect-slides 6
+  --palette palette.json --expect-slides {nslides}
 ```
 
-레이아웃: `cover · toc · divider · icongrid · kpi · bullets · roadmap · closing`.
+레이아웃: `cover · toc · divider · icongrid · textfigure · table · numbered · roadmap · kpi · closing`
+(아이콘 = Lucide 라인 아이콘, 표·간트·임팩트 = 온브랜드 차트).
 스펙 스키마와 공용 엔진은 리포 루트 `_engine/render_deck.py` docstring 참조.
 
 > ⚠️ **비공식 브랜드 영감 테마입니다.** 본 스킬은 {label}과 제휴·보증 관계가 없으며,
@@ -137,8 +138,12 @@ def main():
     d = sys.argv[1].rstrip("/")
     pal = load(os.path.join(d, "palette.json"))
     br = load(os.path.join(d, "brand.json"))
+    nslides = 6
+    sp = os.path.join(d, "spec.sample.json")
+    if os.path.exists(sp):
+        nslides = len(load(sp).get("slides", [])) or 6
     with open(os.path.join(d, "SKILL.md"), "w", encoding="utf-8") as f:
-        f.write(skill_md(pal, br))
+        f.write(skill_md(pal, br, nslides))
     with open(os.path.join(d, "brand.md"), "w", encoding="utf-8") as f:
         f.write(brand_md(pal, br))
     os.makedirs(os.path.join(d, ".claude-plugin"), exist_ok=True)

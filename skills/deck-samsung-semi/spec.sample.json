@@ -1,58 +1,78 @@
 {
   "meta": {"company": "삼성전자 반도체", "eyebrow": "SAMSUNG SEMICONDUCTOR"},
   "slides": [
-    {
-      "layout": "cover",
-      "eyebrow": "Samsung Semiconductor",
-      "title": "메모리를 넘어,\n반도체의 미래를 설계하다",
-      "subtitle": "DRAM · NAND Flash · Foundry · System LSI"
-    },
-    {
-      "layout": "toc",
-      "title": "Contents",
-      "items": [
-        ["01", "사업 개요", "03"],
-        ["02", "핵심 사업 영역", "04"],
-        ["03", "기술 리더십", "05"],
-        ["04", "미래 전략", "06"]
-      ]
-    },
-    {
-      "layout": "divider",
-      "num": "01",
-      "title": "핵심 사업 영역",
-      "subtitle": "메모리부터 파운드리까지, 종합 반도체 포트폴리오"
-    },
-    {
-      "layout": "icongrid",
-      "eyebrow": "Business Portfolio",
-      "title": "4대 사업 축",
-      "subtitle": "메모리·스토리지·파운드리·시스템 반도체를 아우르는 종합 역량",
-      "cols": 2,
-      "cells": [
-        ["메모리 (DRAM · HBM)", "고대역폭 메모리와 서버·모바일 DRAM으로 AI 시대 데이터 처리의 핵심을 담당합니다."],
-        ["낸드플래시 (NAND · SSD)", "고적층 3D NAND와 엔터프라이즈 SSD로 데이터 스토리지 시장을 이끕니다."],
-        ["파운드리 (Foundry)", "첨단 미세공정 기반 위탁생산으로 글로벌 팹리스 고객의 혁신을 제조합니다."],
-        ["시스템 LSI (System LSI)", "모바일 AP·이미지센서·모뎀으로 디바이스 두뇌와 눈을 설계합니다."]
-      ]
-    },
-    {
-      "layout": "kpi",
-      "eyebrow": "Technology Leadership",
-      "title": "성장 지표",
-      "subtitle": "AI 반도체 수요에 맞춘 투자·역량 확대 방향",
-      "metrics": [
-        ["R&D 투자", "기준", "+40%", 100, 140],
-        ["첨단공정 비중", "기준", "2.0x", 100, 200],
-        ["HBM 캐파", "기준", "3.0x", 100, 300]
-      ],
-      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
-    },
-    {
-      "layout": "closing",
-      "title": "반도체의 미래를\n함께 설계합니다",
-      "subtitle": "Samsung Semiconductor",
-      "contact": "brand-inspired sample deck · 상표는 삼성전자의 자산입니다"
-    }
+    {"layout": "cover", "eyebrow": "Samsung Semiconductor",
+     "title": "메모리를 넘어,\n반도체의 미래를 설계하다",
+     "subtitle": "DRAM · NAND Flash · Foundry · System LSI"},
+
+    {"layout": "toc", "eyebrow": "Samsung Semiconductor", "title": "Contents",
+     "items": [["01", "사업 개요", "03"], ["02", "핵심 사업 영역", "05"],
+               ["03", "기술 리더십", "07"], ["04", "성장 로드맵", "09"],
+               ["05", "미래 전략", "11"]]},
+
+    {"layout": "divider", "num": "01", "title": "사업 개요",
+     "subtitle": "종합 반도체 기업으로서의 지향점"},
+
+    {"layout": "textfigure", "eyebrow": "01 · 사업 개요",
+     "title": "AI 시대, 반도체가 여는 새로운 가능성",
+     "subtitle": "폭증하는 데이터와 인공지능 연산을 뒷받침하는 종합 반도체 역량을 제안합니다.",
+     "items": [
+       ["Why · 반도체의 미래", "AI 시대의 데이터 폭증은 더 빠르고 효율적인 메모리와 연산을 요구합니다."],
+       ["What · 종합 반도체 역량", "메모리·낸드·파운드리·시스템 반도체를 아우르는 포트폴리오로 대응합니다."],
+       ["How · 기술 리더십", "첨단 공정과 고대역폭 메모리, 이종집적 패키징으로 한계를 넘습니다."]
+     ]},
+
+    {"layout": "divider", "num": "02", "title": "핵심 사업 영역",
+     "subtitle": "메모리부터 파운드리까지, 4대 사업 축"},
+
+    {"layout": "icongrid", "eyebrow": "02 · 핵심 사업 영역", "title": "4대 사업 축",
+     "subtitle": "메모리·스토리지·파운드리·시스템 반도체를 아우르는 종합 역량", "cols": 2,
+     "cells": [
+       ["memory-stick", "메모리 (DRAM · HBM)", "고대역폭 메모리와 서버·모바일 D램으로 AI 데이터 처리의 핵심을 담당합니다."],
+       ["hard-drive", "낸드플래시 (NAND · SSD)", "고적층 3D 낸드와 엔터프라이즈 SSD로 데이터 스토리지 시장을 이끕니다."],
+       ["cpu", "파운드리 (Foundry)", "첨단 미세공정 기반 위탁생산으로 글로벌 팹리스 고객의 혁신을 제조합니다."],
+       ["camera", "시스템 LSI (System LSI)", "모바일 AP·이미지센서·모뎀으로 디바이스의 두뇌와 눈을 설계합니다."]
+     ]},
+
+    {"layout": "table", "eyebrow": "03 · 기술 리더십",
+     "title": "현재에서 차세대로, 기술 전개 방향",
+     "subtitle": "각 기술 영역의 현재 세대와 차세대 지향점 (일정·표기는 예시)",
+     "headers": ["기술 영역", "현재 세대", "차세대 방향"],
+     "rows": [
+       ["D램", "DDR5 · LPDDR5", "고대역폭 HBM4 · 저전력 차세대 D램"],
+       ["낸드", "고적층 3D NAND", "초고적층 · QLC 고용량 SSD"],
+       ["파운드리", "선단 미세공정", "GAA 기반 초미세 공정 확대"],
+       ["패키징", "2.5D 패키지", "3D 이종집적 첨단 패키징"]
+     ]},
+
+    {"layout": "numbered", "eyebrow": "03 · 기술 리더십", "title": "기술 전략 4대 축",
+     "subtitle": "지속가능한 리더십을 위한 핵심 전략",
+     "lede": "AI 반도체 수요에 대응해 메모리·공정·패키징 전반의 역량을 고도화합니다.",
+     "items": [
+       ["AI 메모리 리더십", "HBM·고대역폭 메모리로 AI 데이터센터 수요를 선점합니다."],
+       ["첨단 공정 고도화", "GAA 등 초미세 공정으로 파운드리 경쟁력을 강화합니다."],
+       ["패키징 혁신", "이종집적 첨단 패키징으로 성능과 집적도를 끌어올립니다."],
+       ["지속가능 제조", "저전력·친환경 공정으로 지속가능한 생산을 추구합니다."]
+     ]},
+
+    {"layout": "roadmap", "eyebrow": "04 · 성장 로드맵", "title": "기술 전개 로드맵",
+     "subtitle": "AI 반도체 수요에 맞춘 단계적 기술 전개 (일정은 브랜드 테마 예시)",
+     "phases": [
+       ["차세대 D램 양산", 2026.0, 2027.4],
+       ["HBM 세대 전환", 2026.5, 2028.2],
+       ["첨단 공정 확대", 2027.2, 2029.3],
+       ["이종집적 패키징", 2028.2, 2030.0]
+     ]},
+
+    {"layout": "kpi", "eyebrow": "04 · 성장 로드맵", "title": "성장 지표",
+     "subtitle": "AI 반도체 수요에 맞춘 투자·역량 확대 방향",
+     "metrics": [["R&D 투자", "기준", "+40%", 100, 140],
+                 ["첨단공정 비중", "기준", "2.0x", 100, 200],
+                 ["HBM 캐파", "기준", "3.0x", 100, 300]],
+     "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"},
+
+    {"layout": "closing", "title": "반도체의 미래를\n함께 설계합니다",
+     "subtitle": "Samsung Semiconductor",
+     "contact": "brand-inspired sample deck · 상표는 삼성전자의 자산입니다"}
   ]
 }

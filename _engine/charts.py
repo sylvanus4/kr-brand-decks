@@ -97,3 +97,35 @@ def roadmap(phases, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
     fig.tight_layout(pad=0.4)
     fig.savefig(out, facecolor="white", bbox_inches="tight")
     plt.close(fig)
+
+
+def comparison_table(headers, rows, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
+                     accent="#1428A0", line="#E6E8EC", panel="#F5F6F8"):
+    """headers: [col0, col1, col2]. rows: [[c0, c1, c2], ...]. Up to 3 columns.
+    First column bold ink; middle column sub-gray; last column ink (the 'to-be')."""
+    ink, sub, muted, accent, line, panel = map(_c, (ink, sub, muted, accent, line, panel))
+    ncol = len(headers)
+    xs = [0.015, 0.20, 0.60][:ncol] if ncol == 3 else [0.015, 0.52][:ncol]
+    fig, ax = plt.subplots(figsize=(11.6, 5.0), dpi=200)
+    fig.patch.set_facecolor("white"); ax.set_facecolor("white"); ax.axis("off")
+    y0 = 0.93
+    for x, h in zip(xs, headers):
+        ax.text(x, y0, h, ha="left", va="center", color=ink, fontsize=13.5,
+                fontweight="bold", transform=ax.transAxes)
+    ax.plot([0.008, 0.992], [y0 - 0.055, y0 - 0.055], color=accent, lw=2.2,
+            transform=ax.transAxes)
+    n = len(rows)
+    rh = (y0 - 0.10) / n
+    for i, row in enumerate(rows):
+        yc = y0 - 0.10 - (i + 0.5) * rh
+        cols = [ink, sub, ink]
+        weights = ["bold", "normal", "normal"]
+        for j, cell in enumerate(row):
+            ax.text(xs[j], yc, cell, ha="left", va="center",
+                    color=cols[j] if j < 3 else sub, fontsize=11,
+                    fontweight=weights[j] if j < 3 else "normal",
+                    transform=ax.transAxes, linespacing=1.45)
+        yl = y0 - 0.10 - (i + 1) * rh
+        ax.plot([0.008, 0.992], [yl, yl], color=line, lw=0.9, transform=ax.transAxes)
+    fig.savefig(out, facecolor="white", bbox_inches="tight")
+    plt.close(fig)
