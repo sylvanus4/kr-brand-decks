@@ -51,7 +51,9 @@ class Deck:
         self.prs.slide_height = Emu(int(SH * EMU_IN))
         self.blank = self.prs.slide_layouts[6]
         self._n = 0
-        self.icons_dir = os.path.join(tmpdir, "icons")
+        # persistent icon cache: fetch each Lucide icon once, reuse across runs
+        # (faster iteration + offline rebuilds after the first fetch).
+        self.icons_dir = os.path.expanduser("~/.cache/kr-brand-decks/icons")
         # accent_ink = accent used as TEXT on a light bg (dark-enough variant for
         # bright brands like yellow/green). on_accent = text drawn ON an accent fill.
         self.accent_ink = pal.get("accent_ink", pal["accent"])
@@ -136,7 +138,7 @@ class Deck:
     def cover(self, sp):
         pal = self.p
         s = self.slide(pal["divider_bg"])
-        self.rect(s, 0.7, 0.7, 0.9, 0.12, pal["accent"])
+        self.rect(s, 0.7, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
         tf = self.box(s, 0.66, 0.95, 11, 0.5)
         self.para(tf, sp.get("eyebrow", "").upper(), 13, pal["divider_ink"], bold=True,
                   first=True, tracking=180)
@@ -171,7 +173,7 @@ class Deck:
         bg = sp.get("bg", pal["divider_bg"])
         s = self.slide(bg)
         ink = pal["divider_ink"]
-        self.rect(s, 0.7, 3.05, 0.9, 0.12, pal["accent"] if bg != pal["accent"] else ink)
+        self.rect(s, 0.7, 3.05, 0.9, 0.12, self._bar_on(bg))
         tf = self.box(s, 0.62, 3.3, 12, 3.2)
         self.para(tf, sp.get("num", ""), 60, ink, bold=True, first=True)
         self.para(tf, sp["title"], 38, ink, bold=True, sb=2)
@@ -413,7 +415,7 @@ class Deck:
     def closing(self, sp):
         pal = self.p
         s = self.slide(pal["divider_bg"])
-        self.rect(s, 0.7, 2.9, 0.9, 0.12, pal["accent"])
+        self.rect(s, 0.7, 2.9, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
         tf = self.box(s, 0.62, 3.15, 12.1, 2.6)
         self.para(tf, sp.get("title", "Thank you"), 40, pal["divider_ink"], bold=True, first=True)
         if sp.get("subtitle"):

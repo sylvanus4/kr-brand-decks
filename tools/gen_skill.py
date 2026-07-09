@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """gen_skill.py -- generate SKILL.md, brand.md, plugin.json for one company skill
-from its palette.json + brand.json. Deterministic: format owned by code, so all 20
+from its palette.json + brand.json. Deterministic: format owned by code, so all
 company skills stay consistent. Run per skill dir, or via tools/build_all.py.
 
 Usage: python3 tools/gen_skill.py skills/deck-samsung-semi
@@ -26,7 +26,8 @@ def skill_md(pal, br, nslides=6):
     desc = (
         f"Generate a {label} ({ko}) brand-themed PPTX deck from a content spec, using "
         f"the verified {label} color palette (accent #{pal['accent']}) and reference-grade "
-        f"native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). "
+        f"native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, "
+        f"comparison table, gantt roadmap, KPI/impact charts, closing). "
         f"The model writes content; code owns all format. "
         f'Use when {trig_str}, "make a {label} deck", "{label} 브랜드 발표자료". '
         f"Do NOT use for a different company (use that company's deck-* skill) or a generic "

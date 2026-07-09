@@ -1,7 +1,7 @@
 ---
 name: deck-sk-hynix
 description: >-
-  Generate a SK hynix (SK하이닉스) brand-themed PPTX deck from a content spec, using the verified SK hynix color palette (accent #EA002C) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "SK하이닉스 발표자료", "sk hynix 덱", "하이닉스 브랜드 ppt", "SK하이닉스 회사소개", "make a SK hynix deck", "SK hynix 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to SK하이닉스 (SK hynix Inc.).
+  Generate a SK hynix (SK하이닉스) brand-themed PPTX deck from a content spec, using the verified SK hynix color palette (accent #EA002C) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "SK하이닉스 발표자료", "sk hynix 덱", "하이닉스 브랜드 ppt", "SK하이닉스 회사소개", "make a SK hynix deck", "SK hynix 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to SK하이닉스 (SK hynix Inc.).
 ---
 
 # deck-sk-hynix — SK hynix (SK하이닉스) 브랜드 데크

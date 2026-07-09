@@ -1,7 +1,7 @@
 ---
 name: deck-hyundai-motor
 description: >-
-  Generate a Hyundai Motor (현대자동차) brand-themed PPTX deck from a content spec, using the verified Hyundai Motor color palette (accent #002C5F) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "현대자동차 발표자료", "Hyundai Motor 덱", "현대자동차 회사소개", "Hyundai Motor brand deck", "make a Hyundai Motor deck", "Hyundai Motor 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 현대자동차 (Hyundai Motor Company).
+  Generate a Hyundai Motor (현대자동차) brand-themed PPTX deck from a content spec, using the verified Hyundai Motor color palette (accent #002C5F) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "현대자동차 발표자료", "Hyundai Motor 덱", "현대자동차 회사소개", "Hyundai Motor brand deck", "make a Hyundai Motor deck", "Hyundai Motor 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 현대자동차 (Hyundai Motor Company).
 ---
 
 # deck-hyundai-motor — Hyundai Motor (현대자동차) 브랜드 데크

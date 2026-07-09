@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""brands_rich.py -- rich 11-slide content for the 18 non-flagship companies.
+"""brands_rich.py -- rich 11-slide content for the non-flagship companies.
 
 Adds the distinctive slides (icons per cell, Why/What/How textfigure, an AS-IS ->
 확대 comparison table, a numbered strategy set, and a gantt roadmap) so every deck

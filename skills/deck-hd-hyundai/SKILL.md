@@ -1,7 +1,7 @@
 ---
 name: deck-hd-hyundai
 description: >-
-  Generate a HD Hyundai (HD현대) brand-themed PPTX deck from a content spec, using the verified HD Hyundai color palette (accent #00AD1D) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "HD현대 발표자료", "HD Hyundai 덱", "HD현대 회사소개", "HD Hyundai brand deck", "make a HD Hyundai deck", "HD Hyundai 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to HD현대 (HD Hyundai Co., Ltd.).
+  Generate a HD Hyundai (HD현대) brand-themed PPTX deck from a content spec, using the verified HD Hyundai color palette (accent #00AD1D) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "HD현대 발표자료", "HD Hyundai 덱", "HD현대 회사소개", "HD Hyundai brand deck", "make a HD Hyundai deck", "HD Hyundai 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to HD현대 (HD Hyundai Co., Ltd.).
 ---
 
 # deck-hd-hyundai — HD Hyundai (HD현대) 브랜드 데크

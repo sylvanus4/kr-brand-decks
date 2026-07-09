@@ -8,14 +8,20 @@ rsvg-convert. Cached by (name,color,size). Returns a PNG path, or None on failur
 """
 import hashlib
 import os
+import re
 import shutil
 import subprocess
 import urllib.request
 
 LUCIDE = "https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/{}.svg"
+_SAFE = re.compile(r"^[a-z0-9-]+$")
 
 
 def icon_png(name, hex_color, size_px, cache_dir, stroke=2.0):
+    # icon name comes from (model-authored) spec content: allow only Lucide-style
+    # slugs so it can't traverse the filesystem or the URL path.
+    if not name or not _SAFE.match(name):
+        return None
     os.makedirs(cache_dir, exist_ok=True)
     col = hex_color.lstrip("#")
     key = hashlib.md5(f"{name}-{col}-{size_px}-{stroke}".encode()).hexdigest()[:8]

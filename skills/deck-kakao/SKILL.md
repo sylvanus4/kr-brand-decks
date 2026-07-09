@@ -1,7 +1,7 @@
 ---
 name: deck-kakao
 description: >-
-  Generate a Kakao (카카오) brand-themed PPTX deck from a content spec, using the verified Kakao color palette (accent #FEE500) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "카카오 발표자료", "Kakao 덱", "카카오 회사소개", "Kakao brand deck", "make a Kakao deck", "Kakao 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 카카오 (Kakao Corp.).
+  Generate a Kakao (카카오) brand-themed PPTX deck from a content spec, using the verified Kakao color palette (accent #FEE500) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "카카오 발표자료", "Kakao 덱", "카카오 회사소개", "Kakao brand deck", "make a Kakao deck", "Kakao 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 카카오 (Kakao Corp.).
 ---
 
 # deck-kakao — Kakao (카카오) 브랜드 데크

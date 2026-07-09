@@ -1,7 +1,7 @@
 ---
 name: deck-toss
 description: >-
-  Generate a Toss (토스) brand-themed PPTX deck from a content spec, using the verified Toss color palette (accent #0064FF) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "토스 발표자료", "Toss 덱", "토스 회사소개", "Toss brand deck", "make a Toss deck", "Toss 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 비바리퍼블리카 (Viva Republica, Toss).
+  Generate a Toss (토스) brand-themed PPTX deck from a content spec, using the verified Toss color palette (accent #0064FF) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "토스 발표자료", "Toss 덱", "토스 회사소개", "Toss brand deck", "make a Toss deck", "Toss 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 비바리퍼블리카 (Viva Republica, Toss).
 ---
 
 # deck-toss — Toss (토스) 브랜드 데크

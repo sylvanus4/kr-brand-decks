@@ -121,7 +121,12 @@ def main():
 
     gen = ph = 0
     for i, im in enumerate(plan.get("images", [])):
-        s = slides[im["slide"] - 1]
+        idx = im["slide"] - 1
+        if idx < 0 or idx >= len(slides):
+            sys.stderr.write(f"[images] slide {im['slide']} out of range (deck has "
+                             f"{len(slides)}); skipping\n")
+            continue
+        s = slides[idx]
         x, y, w, h = im["box_in"]
         prompt = im["prompt"] + im.get("style_suffix", suffix)
         want_gen = args.mode in ("auto", "generate")

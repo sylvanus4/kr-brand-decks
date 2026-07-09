@@ -1,7 +1,7 @@
 ---
 name: deck-samsung-semi
 description: >-
-  Generate a Samsung Semiconductor (삼성전자 반도체) brand-themed PPTX deck from a content spec, using the verified Samsung Semiconductor color palette (accent #1428A0) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "삼성반도체 발표자료", "삼성 반도체 ppt", "samsung semiconductor 덱", "삼성 DS 브랜드 덱", "make a Samsung Semiconductor deck", "Samsung Semiconductor 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 삼성전자 (Samsung Electronics Co., Ltd.).
+  Generate a Samsung Semiconductor (삼성전자 반도체) brand-themed PPTX deck from a content spec, using the verified Samsung Semiconductor color palette (accent #1428A0) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "삼성반도체 발표자료", "삼성 반도체 ppt", "samsung semiconductor 덱", "삼성 DS 브랜드 덱", "make a Samsung Semiconductor deck", "Samsung Semiconductor 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 삼성전자 (Samsung Electronics Co., Ltd.).
 ---
 
 # deck-samsung-semi — Samsung Semiconductor (삼성전자 반도체) 브랜드 데크

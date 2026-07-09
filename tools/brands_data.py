@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""brands_data.py -- single source of truth for the 18 non-flagship company skills.
+"""brands_data.py -- single source of truth for the non-flagship company skills.
 
 Each entry carries the verified palette overrides + deck content. Shared neutral
 palette roles come from DEFAULT_PAL. build_all.py turns this into palette.json,

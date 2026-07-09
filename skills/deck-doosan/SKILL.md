@@ -1,7 +1,7 @@
 ---
 name: deck-doosan
 description: >-
-  Generate a Doosan (두산) brand-themed PPTX deck from a content spec, using the verified Doosan color palette (accent #0017A8) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "두산 발표자료", "Doosan 덱", "두산 회사소개", "Doosan brand deck", "make a Doosan deck", "Doosan 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 두산 (Doosan Corporation).
+  Generate a Doosan (두산) brand-themed PPTX deck from a content spec, using the verified Doosan color palette (accent #0017A8) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "두산 발표자료", "Doosan 덱", "두산 회사소개", "Doosan brand deck", "make a Doosan deck", "Doosan 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 두산 (Doosan Corporation).
 ---
 
 # deck-doosan — Doosan (두산) 브랜드 데크
