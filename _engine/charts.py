@@ -99,6 +99,75 @@ def roadmap(phases, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
     plt.close(fig)
 
 
+def trend_dual(labels, revenue, op, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
+               accent="#1428A0", line="#E6E8EC", rev_name="매출", op_name="영업이익",
+               unit="조원"):
+    """Revenue bars (left axis) + operating-profit line (right axis) over periods.
+    The classic quarterly revenue/profit chart. Values in `unit`."""
+    ink, sub, muted, accent, line = map(_c, (ink, sub, muted, accent, line))
+    import numpy as np
+    x = np.arange(len(labels))
+    fig, ax1 = plt.subplots(figsize=(11.4, 4.5), dpi=200)
+    fig.patch.set_facecolor("white"); ax1.set_facecolor("white")
+    bars = ax1.bar(x, revenue, width=0.52, color=accent, zorder=3, label=rev_name)
+    rmax = max(revenue) or 1
+    for xi, v in zip(x, revenue):
+        ax1.text(xi, v + rmax * 0.03, f"{v:g}", ha="center", color=ink, fontsize=10.5,
+                 fontweight="bold")
+    ax1.set_ylim(0, rmax * 1.25)
+    ax2 = ax1.twinx()
+    ax2.plot(x, op, color=ink, marker="o", markersize=6, linewidth=2.2, zorder=4, label=op_name)
+    omax = max(op) or 1
+    omin = min(op)
+    for xi, v in zip(x, op):
+        ax2.text(xi, v + (omax - omin + 1) * 0.06, f"{v:g}", ha="center", color=ink,
+                 fontsize=10, fontweight="bold")
+    ax2.set_ylim(min(0, omin) * 1.2 if omin < 0 else 0, omax * 1.4)
+    ax1.set_xticks(x); ax1.set_xticklabels(labels, color=sub, fontsize=11)
+    ax1.set_yticks([]); ax2.set_yticks([])
+    for ax in (ax1, ax2):
+        for sp in ("top", "left", "right"):
+            ax.spines[sp].set_visible(False)
+        ax.spines["bottom"].set_color(line); ax.tick_params(length=0)
+    ax1.legend(loc="upper left", frameon=False, fontsize=10.5,
+               labelcolor=sub, bbox_to_anchor=(0.0, 1.08))
+    ax2.legend(loc="upper left", frameon=False, fontsize=10.5,
+               labelcolor=sub, bbox_to_anchor=(0.16, 1.08))
+    ax1.text(1.0, -0.16, f"단위: {unit}", transform=ax1.transAxes, ha="right",
+             color=muted, fontsize=9)
+    fig.tight_layout(pad=0.6)
+    fig.savefig(out, facecolor="white", bbox_inches="tight")
+    plt.close(fig)
+
+
+def hbars(labels, values, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
+          accent="#1428A0", line="#E6E8EC", unit="조원"):
+    """Horizontal bars for a segment / breakdown (e.g. operating profit by division)."""
+    ink, sub, muted, accent, line = map(_c, (ink, sub, muted, accent, line))
+    import numpy as np
+    y = np.arange(len(labels))[::-1]
+    fig, ax = plt.subplots(figsize=(11.2, 4.2), dpi=200)
+    fig.patch.set_facecolor("white"); ax.set_facecolor("white")
+    vmax = max(abs(v) for v in values) or 1
+    ax.barh(y, values, height=0.55, color=accent, zorder=3)
+    for yi, lab, v in zip(y, labels, values):
+        ax.text(-vmax * 0.02, yi, lab, ha="right", va="center", color=ink, fontsize=12,
+                fontweight="bold")
+        ax.text(v + (vmax * 0.02 if v >= 0 else -vmax * 0.02), yi, f"{v:g}",
+                ha="left" if v >= 0 else "right", va="center", color=ink,
+                fontsize=11.5, fontweight="bold")
+    ax.set_xlim(min(0, min(values)) * 1.15, vmax * 1.22)
+    ax.set_yticks([]); ax.set_xticks([])
+    for sp in ("top", "right", "left", "bottom"):
+        ax.spines[sp].set_visible(False)
+    ax.axvline(0, color=line, lw=1)
+    ax.text(1.0, -0.08, f"단위: {unit}", transform=ax.transAxes, ha="right",
+            color=muted, fontsize=9)
+    fig.tight_layout(pad=0.6)
+    fig.savefig(out, facecolor="white", bbox_inches="tight")
+    plt.close(fig)
+
+
 def comparison_table(headers, rows, out, ink="#1A1A1A", sub="#555555", muted="#9A9AA0",
                      accent="#1428A0", line="#E6E8EC", panel="#F5F6F8"):
     """headers: [col0, col1, col2]. rows: [[c0, c1, c2], ...]. Up to 3 columns.
