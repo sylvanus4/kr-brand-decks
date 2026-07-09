@@ -26,15 +26,13 @@ format are owned by code — so every deck comes out clean and consistent.
 ### A. Claude Code — `/plugin` 마켓플레이스 (권장)
 ```
 /plugin marketplace add sylvanus4/kr-brand-decks
-/plugin install deck-samsung-semi@kr-brand-decks
-/plugin install deck-sk-hynix@kr-brand-decks
+/plugin install kr-brand-decks@kr-brand-decks
 ```
 설치 후 Claude Code를 재시작하거나 `/reload-plugins`. 갱신: `/plugin marketplace update kr-brand-decks`.
-원하는 회사 스킬만 골라 설치하면 됩니다.
 
-> 공용 렌더 엔진은 저장소 루트 `_engine/`에 있고, 각 스킬은 `../../_engine`으로 이를 호출합니다.
-> 스킬이 엔진을 못 찾는 경우(설치 방식에 따라)엔 아래 **B. git clone** 경로로 저장소 전체를
-> 받아 그 안에서 실행하세요(가장 확실).
+> **단일 번들**로 배포합니다 — 23개 회사 스킬 + 공용 렌더 엔진(`_engine/`)이 **함께** 설치되어
+> 스킬이 항상 엔진을 찾습니다(엔진이 스킬과 분리돼 누락되는 문제 방지). 설치하면 23개 스킬이
+> 모두 등록되며, 필요한 회사만 사용하면 됩니다.
 
 ### B. git clone + 로컬 스킬 (Claude Code / 수동)
 ```bash

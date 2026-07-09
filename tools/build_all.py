@@ -140,31 +140,29 @@ def main():
         # validate
         vrc, vlog = run([PY, os.path.join(ENGINE, "validate.py"), out,
                          "--palette", os.path.join(d, "palette.json"),
-                         "--expect-slides", str(nslides)])
+                         "--expect-slides", str(nslides), "--check-contrast"])
         status = "PASS" if (rc == 0 and vrc == 0) else "FAIL"
         rows.append((slug, status, vlog.splitlines()[-1] if vlog else log[:60]))
         print(f"[{status}] deck-{slug}")
         if status == "FAIL":
             print("   ", log[-300:], "|", vlog[-200:])
 
-    # marketplace.json
-    plugins = []
-    for slug in order:
-        pj = os.path.join(SKILLS, f"deck-{slug}", ".claude-plugin", "plugin.json")
-        with open(pj, encoding="utf-8") as f:
-            p = json.load(f)
-        plugins.append({"name": p["name"], "source": f"deck-{slug}",
-                        "description": p["description"], "version": p["version"],
-                        "author": p["author"]})
+    # marketplace.json -- ONE bundle plugin (source ".") so the shared _engine travels
+    # with the skills regardless of how the installer materializes the plugin.
     market = {
         "name": "kr-brand-decks",
         "owner": {"name": "sylvanus4"},
         "metadata": {
-            "description": "한국 주요 기업 브랜드 테마 PPTX 데크 스킬 모음 (비공식). "
+            "description": "한국 주요 기업 브랜드 테마 PPTX 데크 스킬 (비공식). "
                            "Unofficial Korean-enterprise brand-themed PPTX deck skills.",
-            "pluginRoot": "./skills",
         },
-        "plugins": plugins,
+        "plugins": [{
+            "name": "kr-brand-decks",
+            "source": ".",
+            "description": f"{len(order)}개 회사 브랜드 데크 스킬 + 공용 렌더 엔진 번들 (비공식).",
+            "version": "0.2.0",
+            "author": {"name": "sylvanus4"},
+        }],
     }
     os.makedirs(os.path.join(REPO, ".claude-plugin"), exist_ok=True)
     w(os.path.join(REPO, ".claude-plugin", "marketplace.json"), market)
