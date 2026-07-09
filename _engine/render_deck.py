@@ -352,6 +352,64 @@ class Deck:
         except Exception as e:
             sys.stderr.write(f"[roadmap degraded: {e}]\n")
 
+    def bignum(self, sp):
+        """A row of big-number KPI cards (value + label + delta). For financial highlights."""
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        cards = sp["cards"]
+        n = len(cards)
+        gx0 = 0.62
+        gw = (12.1 - (n - 1) * 0.4) / n
+        y, h = 3.05, 2.7
+        for i, c in enumerate(cards):
+            val, label = c[0], c[1]
+            delta = c[2] if len(c) > 2 else None
+            x = gx0 + i * (gw + 0.4)
+            self.rect(s, x, y, gw, h, pal["surface"])
+            self.rect(s, x, y, gw, 0.08, pal["accent"])
+            tf = self.box(s, x + 0.3, y + 0.4, gw - 0.6, 0.4)
+            self.para(tf, label, 12, pal["sub"], first=True)
+            tf = self.box(s, x + 0.3, y + 0.92, gw - 0.6, 1.0)
+            self.para(tf, val, 33, pal["ink"], bold=True, first=True)
+            if delta:
+                tf = self.box(s, x + 0.3, y + h - 0.62, gw - 0.6, 0.4)
+                self.para(tf, delta, 12.5, self.accent_ink, bold=True, first=True)
+
+    def trend(self, sp):
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        self._n += 1
+        png = os.path.join(self.tmp, f"trend_{self._n}.png")
+        try:
+            import charts
+            charts.trend_dual(sp["labels"], sp["revenue"], sp["op"], png, ink=pal["ink"],
+                              sub=pal["sub"], muted=pal["muted"], accent=pal["accent"],
+                              line=pal["border"], rev_name=sp.get("rev_name", "매출"),
+                              op_name=sp.get("op_name", "영업이익"), unit=sp.get("unit", "조원"))
+            self.pic_contain(s, png, 0.62, 2.7, 12.1, 4.0)
+        except Exception as e:
+            sys.stderr.write(f"[trend degraded: {e}]\n")
+
+    def segment(self, sp):
+        pal = self.p
+        s = self.slide(pal["bg"])
+        self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
+                    sp.get("page", ""))
+        self._n += 1
+        png = os.path.join(self.tmp, f"seg_{self._n}.png")
+        try:
+            import charts
+            charts.hbars(sp["labels"], sp["values"], png, ink=pal["ink"], sub=pal["sub"],
+                         muted=pal["muted"], accent=pal["accent"], line=pal["border"],
+                         unit=sp.get("unit", "조원"))
+            self.pic_contain(s, png, 0.62, 2.75, 12.1, 3.9)
+        except Exception as e:
+            sys.stderr.write(f"[segment degraded: {e}]\n")
+
     def closing(self, sp):
         pal = self.p
         s = self.slide(pal["divider_bg"])
@@ -369,7 +427,8 @@ class Deck:
                     "icongrid": self.icongrid, "kpi": self.kpi, "bullets": self.bullets,
                     "roadmap": self.roadmap, "closing": self.closing,
                     "textfigure": self.textfigure, "table": self.table,
-                    "numbered": self.numbered}
+                    "numbered": self.numbered, "bignum": self.bignum,
+                    "trend": self.trend, "segment": self.segment}
         for sl in spec["slides"]:
             fn = dispatch.get(sl["layout"])
             if not fn:
