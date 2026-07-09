@@ -13,7 +13,7 @@
     {"layout": "divider", "num": "01", "title": "회사 개요",
      "subtitle": "메모리 반도체 전문 기업의 지향점", "bg": "EA002C"},
 
-    {"layout": "textfigure", "eyebrow": "01 · 회사 개요",
+    {"layout": "textfigure", "eyebrow": "01 · 회사 개요", "image_zone": true,
      "title": "AI 시대의 메모리, 그 중심에 서다",
      "subtitle": "인공지능 연산의 병목을 해소하는 고성능 메모리를 제안합니다.",
      "items": [

@@ -95,25 +95,50 @@ def main():
         "font_note": "Pretendard 무료 폴백, 대안 Noto Sans KR",
         "trademark_owner": args.owner,
     }
+    ey = args.label
+    tl = args.tagline
     spec = {
-        "meta": {"company": args.label_ko, "eyebrow": args.label},
+        "meta": {"company": args.label_ko, "eyebrow": ey},
         "slides": [
-            {"layout": "cover", "eyebrow": args.label, "title": f"{args.label_ko}\n{args.tagline}",
-             "subtitle": "편집하세요 — 부제"},
-            {"layout": "toc", "title": "Contents",
-             "items": [["01", "회사 개요", "03"], ["02", "핵심 사업 영역", "04"],
-                       ["03", "성장 지표", "05"], ["04", "미래 비전", "06"]]},
-            {"layout": "divider", "num": "01", "title": "핵심 사업 영역", "subtitle": args.tagline},
-            {"layout": "icongrid", "eyebrow": "Business Portfolio", "title": "핵심 사업 영역",
-             "subtitle": args.tagline, "cols": 2,
-             "cells": [["사업 영역 1", "설명을 입력하세요."], ["사업 영역 2", "설명을 입력하세요."],
-                       ["사업 영역 3", "설명을 입력하세요."], ["사업 영역 4", "설명을 입력하세요."]]},
-            {"layout": "kpi", "eyebrow": "Growth", "title": "성장 지표", "subtitle": args.tagline,
+            {"layout": "cover", "eyebrow": ey, "title": f"{args.label_ko}\n{tl}",
+             "subtitle": "핵심 키워드 1 · 키워드 2 · 키워드 3 · 키워드 4"},
+            {"layout": "toc", "eyebrow": ey, "title": "Contents",
+             "items": [["01", "사업 개요", "03"], ["02", "핵심 사업 영역", "05"],
+                       ["03", "성장 전략", "07"], ["04", "성장 로드맵", "09"], ["05", "미래 비전", "11"]]},
+            {"layout": "divider", "num": "01", "title": "사업 개요", "subtitle": tl},
+            {"layout": "textfigure", "eyebrow": "01 · 사업 개요", "title": f"{args.label_ko}가 그리는 미래",
+             "subtitle": tl,
+             "items": [["Why · 시장의 변화", "시장 환경 변화를 한 줄로 입력하세요."],
+                       ["What · 사업 영역", tl],
+                       ["How · 실행 전략", "실행 전략을 한 줄로 입력하세요."]],
+             "panel_title": "핵심 지향", "panel_lede": tl,
+             "panel_points": ["키워드 1", "키워드 2", "키워드 3", "키워드 4"]},
+            {"layout": "divider", "num": "02", "title": "핵심 사업 영역", "subtitle": tl},
+            {"layout": "icongrid", "eyebrow": "02 · 핵심 사업 영역", "title": "핵심 사업 영역",
+             "subtitle": tl, "cols": 2,
+             "cells": [["box", "사업 영역 1", "설명을 입력하세요."],
+                       ["layers", "사업 영역 2", "설명을 입력하세요."],
+                       ["zap", "사업 영역 3", "설명을 입력하세요."],
+                       ["globe", "사업 영역 4", "설명을 입력하세요."]]},
+            {"layout": "table", "eyebrow": "03 · 성장 전략", "title": "현재에서 확대 방향으로",
+             "subtitle": "각 사업 영역의 현재와 확대 방향 (표기는 예시)",
+             "headers": ["사업 영역", "현재", "확대 방향"],
+             "rows": [["영역 1", "현재 내용", "확대 방향"], ["영역 2", "현재 내용", "확대 방향"],
+                      ["영역 3", "현재 내용", "확대 방향"], ["영역 4", "현재 내용", "확대 방향"]]},
+            {"layout": "numbered", "eyebrow": "03 · 성장 전략", "title": "성장 전략 4대 축",
+             "subtitle": tl, "lede": tl,
+             "items": [["전략 1", "설명을 입력하세요."], ["전략 2", "설명을 입력하세요."],
+                       ["전략 3", "설명을 입력하세요."], ["전략 4", "설명을 입력하세요."]]},
+            {"layout": "roadmap", "eyebrow": "04 · 성장 로드맵", "title": "성장 로드맵",
+             "subtitle": "단계적 성장 전개 (일정은 예시)",
+             "phases": [["단계 1", 2026.0, 2027.4], ["단계 2", 2026.6, 2028.2],
+                        ["단계 3", 2027.2, 2029.2], ["단계 4", 2028.0, 2030.0]]},
+            {"layout": "kpi", "eyebrow": "04 · 성장 로드맵", "title": "성장 지표", "subtitle": tl,
              "metrics": [["지표 1", "기준", "+30%", 100, 130], ["지표 2", "기준", "2.0x", 100, 200],
                          ["지표 3", "기준", "+40%", 100, 140]],
              "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"},
             {"layout": "closing", "title": f"{args.label_ko}와 함께\n미래를 그립니다",
-             "subtitle": args.label, "contact": f"brand-inspired sample deck · 상표는 {args.owner}의 자산입니다"},
+             "subtitle": ey, "contact": f"brand-inspired sample deck · 상표는 {args.owner}의 자산입니다"},
         ],
     }
 
@@ -130,7 +155,7 @@ def main():
                     "--palette", os.path.join(d, "palette.json"),
                     "--spec", os.path.join(d, "spec.sample.json"), "--out", out, "--pdf"])
     subprocess.run([args.interp, os.path.join(REPO, "_engine", "validate.py"), out,
-                    "--palette", os.path.join(d, "palette.json"), "--expect-slides", "6"])
+                    "--palette", os.path.join(d, "palette.json"), "--expect-slides", "11"])
     print(f"\n✅ deck-{slug} scaffolded. Next:")
     print(f"   1) edit skills/deck-{slug}/spec.sample.json  (cells/kpi/titles = your real content)")
     print(f"   2) re-render: python3 _engine/render_deck.py --palette skills/deck-{slug}/palette.json "
