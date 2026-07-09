@@ -1,0 +1,16 @@
+{
+  "slug": "hanwha",
+  "label": "Hanwha",
+  "label_ko": "한화",
+  "tagline": "방산·에너지·금융·우주를 잇는 미래 산업 그룹",
+  "triggers_ko": [
+    "한화 발표자료",
+    "Hanwha 덱",
+    "한화 회사소개",
+    "Hanwha brand deck"
+  ],
+  "art_direction": "aerospace / clean-energy imagery, Hanwha orange accent on dark, bold minimal, no logos",
+  "accent_source": "Hanwha Orange #F37321 — hanwha.com 브랜드 시스템 가이드, brandcolorcode 교차확인",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "한화 (Hanwha Group)"
+}

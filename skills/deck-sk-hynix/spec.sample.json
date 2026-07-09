@@ -1,0 +1,59 @@
+{
+  "meta": {"company": "SK하이닉스", "eyebrow": "SK hynix"},
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "SK hynix",
+      "title": "메모리 반도체로\n세상을 움직이다",
+      "subtitle": "DRAM · NAND Flash · HBM · AI Memory"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        ["01", "회사 개요", "03"],
+        ["02", "핵심 사업 영역", "04"],
+        ["03", "AI 메모리 리더십", "05"],
+        ["04", "미래 비전", "06"]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "DRAM·NAND를 축으로 AI 시대 메모리를 선도합니다",
+      "bg": "EA002C"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "메모리 4대 축",
+      "subtitle": "DRAM·NAND·HBM·솔루션을 아우르는 메모리 전문 역량",
+      "cols": 2,
+      "cells": [
+        ["DRAM", "서버·모바일·그래픽 D램으로 데이터센터와 디바이스의 성능을 뒷받침합니다."],
+        ["NAND Flash", "고적층 낸드와 eSSD로 대용량 데이터 저장 시장을 이끕니다."],
+        ["HBM (고대역폭 메모리)", "AI 가속기용 고대역폭 메모리로 인공지능 연산의 병목을 해소합니다."],
+        ["Solutions", "모듈·SSD 등 완성 솔루션으로 고객 시스템에 최적화된 메모리를 제공합니다."]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "AI Memory Leadership",
+      "title": "성장 지표",
+      "subtitle": "AI 메모리 수요 확대에 맞춘 투자·역량 방향",
+      "metrics": [
+        ["HBM 매출 비중", "기준", "+50%", 100, 150],
+        ["첨단 D램 전환", "기준", "2.2x", 100, 220],
+        ["R&D 투자", "기준", "+35%", 100, 135]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "AI 시대의 메모리,\nSK하이닉스가 만듭니다",
+      "subtitle": "SK hynix",
+      "contact": "brand-inspired sample deck · 상표는 SK하이닉스의 자산입니다"
+    }
+  ]
+}

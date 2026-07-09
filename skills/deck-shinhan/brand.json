@@ -1,0 +1,16 @@
+{
+  "slug": "shinhan",
+  "label": "Shinhan Financial Group",
+  "label_ko": "신한금융그룹",
+  "tagline": "은행·카드·증권을 잇는 리딩 금융 그룹",
+  "triggers_ko": [
+    "신한금융그룹 발표자료",
+    "Shinhan Financial Group 덱",
+    "신한금융그룹 회사소개",
+    "Shinhan Financial Group brand deck"
+  ],
+  "art_direction": "modern finance imagery, Shinhan blue accent, confident minimal, no logos",
+  "accent_source": "Shinhan Blue #0046FF — shinhanci.co.kr CI + color-hex 교차확인 (흰 텍스트 대비 6.3:1)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "신한금융그룹 (Shinhan Financial Group)"
+}

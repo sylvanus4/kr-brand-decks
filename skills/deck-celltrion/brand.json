@@ -1,0 +1,16 @@
+{
+  "slug": "celltrion",
+  "label": "Celltrion",
+  "label_ko": "셀트리온",
+  "tagline": "바이오시밀러와 신약으로 여는 글로벌 헬스케어",
+  "triggers_ko": [
+    "셀트리온 발표자료",
+    "Celltrion 덱",
+    "셀트리온 회사소개",
+    "Celltrion brand deck"
+  ],
+  "art_direction": "clean biotech / life-science imagery, Celltrion green, precise clinical, no logos",
+  "accent_source": "Celltrion Green 시스템 — celltrion.com 공식 6단계 그린(#96F0A5~#00552D). accent #50B848(근접 추정), 최암색 #00552D divider(대비 9:1). ⚠️ 블루 아님",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "셀트리온 (Celltrion, Inc.)"
+}

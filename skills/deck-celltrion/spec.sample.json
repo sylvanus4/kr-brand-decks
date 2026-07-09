@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "셀트리온",
+    "eyebrow": "Celltrion"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Celltrion",
+      "title": "생명을 위한\n바이오 혁신",
+      "subtitle": "Biosimilar · Novel Drug · Chemical · Global"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "바이오시밀러를 넘어 신약으로"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "바이오시밀러를 넘어 신약으로",
+      "cols": 2,
+      "cells": [
+        [
+          "바이오시밀러",
+          "항체 바이오시밀러로 글로벌 시장 접근성을 넓힙니다."
+        ],
+        [
+          "신약 개발",
+          "신규 파이프라인으로 미래 성장 동력을 확보합니다."
+        ],
+        [
+          "케미컬",
+          "제네릭·개량신약으로 사업 포트폴리오를 다각화합니다."
+        ],
+        [
+          "글로벌 헬스케어",
+          "직판 체계로 세계 환자에게 직접 다가갑니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "바이오시밀러와 신약으로 여는 글로벌 헬스케어",
+      "metrics": [
+        [
+          "파이프라인 확대",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "직판 비중",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "신약 비중",
+          "기준",
+          "본격화",
+          100,
+          220
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "건강한 미래를\n함께 만듭니다",
+      "subtitle": "Celltrion",
+      "contact": "brand-inspired sample deck · 상표는 셀트리온 (Celltrion, Inc.)의 자산입니다"
+    }
+  ]
+}

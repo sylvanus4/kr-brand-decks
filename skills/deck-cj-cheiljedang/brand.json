@@ -1,0 +1,16 @@
+{
+  "slug": "cj-cheiljedang",
+  "label": "CJ CheilJedang",
+  "label_ko": "CJ제일제당",
+  "tagline": "식품과 바이오로 K-푸드를 세계에 알리는 기업",
+  "triggers_ko": [
+    "CJ제일제당 발표자료",
+    "CJ CheilJedang 덱",
+    "CJ제일제당 회사소개",
+    "CJ CheilJedang brand deck"
+  ],
+  "art_direction": "appetizing K-food imagery, CJ red accent, vibrant appetizing, no logos",
+  "accent_source": "CJ Blossom Red #EF151E (계열 CJ Logistics 공식 추출값, CJ그룹 Blossom 3색과 일치 — CJ제일제당 전용 PDF 추출 실패로 추정). divider는 어둡게(#A30F16)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "CJ제일제당 (CJ CheilJedang Corp.)"
+}

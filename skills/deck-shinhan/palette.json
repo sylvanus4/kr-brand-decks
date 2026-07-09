@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "shinhan",
+  "label": "Shinhan Financial Group",
+  "accent": "0046FF",
+  "divider_bg": "0046FF",
+  "_source": "Shinhan Blue #0046FF — shinhanci.co.kr CI + color-hex 교차확인 (흰 텍스트 대비 6.3:1) | Unofficial brand-inspired theme; trademarks belong to 신한금융그룹 (Shinhan Financial Group)"
+}

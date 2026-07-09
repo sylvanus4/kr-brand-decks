@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "농심",
+    "eyebrow": "Nongshim"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Nongshim",
+      "title": "세계인이 즐기는\n대한민국의 맛",
+      "subtitle": "Ramyun · Snack · Beverage · Global"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "국내 1위를 넘어 글로벌 식품 기업으로"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "국내 1위를 넘어 글로벌 식품 기업으로",
+      "cols": 2,
+      "cells": [
+        [
+          "라면",
+          "신라면을 앞세워 국내외 라면 시장을 선도합니다."
+        ],
+        [
+          "스낵",
+          "새우깡 등 스테디셀러로 스낵 시장을 이끕니다."
+        ],
+        [
+          "음료 · 생수",
+          "백산수 등으로 음료·생수 포트폴리오를 확장합니다."
+        ],
+        [
+          "글로벌",
+          "미국·중국 생산기지로 K-푸드 세계화를 가속합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "라면과 스낵으로 세계인의 입맛을 사로잡는 식품 기업",
+      "metrics": [
+        [
+          "글로벌 매출 비중",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "미주 매출",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "신제품 비중",
+          "기준",
+          "+35%",
+          100,
+          135
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "맛있는 라면을 넘어\n세계인의 식탁으로",
+      "subtitle": "Nongshim",
+      "contact": "brand-inspired sample deck · 상표는 농심 (Nongshim Co., Ltd.)의 자산입니다"
+    }
+  ]
+}

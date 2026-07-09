@@ -1,0 +1,16 @@
+{
+  "slug": "kia",
+  "label": "Kia",
+  "label_ko": "기아",
+  "tagline": "지속가능한 모빌리티 솔루션 프로바이더",
+  "triggers_ko": [
+    "기아 발표자료",
+    "Kia 덱",
+    "기아 회사소개",
+    "Kia brand deck"
+  ],
+  "art_direction": "bold modern automotive imagery, Kia red on midnight black, dynamic minimal, no logos",
+  "accent_source": "Kia Live Red #EA0029 + Midnight Black #05141F — 2021 리브랜드 공식 CI 가이드",
+  "font_note": "Kia Signature (사유) → Pretendard 폴백",
+  "trademark_owner": "기아 (Kia Corporation)"
+}

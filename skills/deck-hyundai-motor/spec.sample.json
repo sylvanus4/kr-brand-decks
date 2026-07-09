@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "현대자동차",
+    "eyebrow": "Hyundai Motor"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Hyundai Motor",
+      "title": "이동의 자유,\n그 이상의 진보",
+      "subtitle": "ICE · EV · FCEV · SDV"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "전동화와 수소로 여는 미래 모빌리티"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "전동화와 수소로 여는 미래 모빌리티",
+      "cols": 2,
+      "cells": [
+        [
+          "내연기관·하이브리드",
+          "검증된 파워트레인으로 안정적 글로벌 판매를 유지합니다."
+        ],
+        [
+          "전동화 (EV)",
+          "전용 플랫폼 기반 전기차로 전동화 전환을 가속합니다."
+        ],
+        [
+          "수소 (FCEV)",
+          "수소연료전지로 상용·승용 무공해 모빌리티를 확장합니다."
+        ],
+        [
+          "SDV · 모빌리티",
+          "소프트웨어 중심 차량과 신모빌리티로 경험을 재정의합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "내연기관을 넘어 전동화·수소·SDV로 나아가는 모빌리티",
+      "metrics": [
+        [
+          "EV 판매 비중",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "SDV 전환",
+          "기준",
+          "본격화",
+          100,
+          220
+        ],
+        [
+          "수소 생태계",
+          "기준",
+          "+40%",
+          100,
+          140
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "Progress\nfor Humanity",
+      "subtitle": "Hyundai Motor",
+      "contact": "brand-inspired sample deck · 상표는 현대자동차 (Hyundai Motor Company)의 자산입니다"
+    }
+  ]
+}

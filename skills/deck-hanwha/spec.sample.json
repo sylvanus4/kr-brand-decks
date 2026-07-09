@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "한화",
+    "eyebrow": "Hanwha"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Hanwha",
+      "title": "지속가능한 미래를\n설계하다",
+      "subtitle": "Defense · Energy · Finance · Space"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "방산부터 우주까지 확장하는 포트폴리오"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "방산부터 우주까지 확장하는 포트폴리오",
+      "cols": 2,
+      "cells": [
+        [
+          "방산",
+          "지상·해양 방산 체계로 국가 안보에 기여합니다."
+        ],
+        [
+          "에너지",
+          "태양광 밸류체인으로 친환경 에너지를 확대합니다."
+        ],
+        [
+          "금융",
+          "보험·자산운용으로 종합 금융 서비스를 제공합니다."
+        ],
+        [
+          "우주 (스페이스)",
+          "발사체·위성으로 우주 산업의 미래에 도전합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "방산·에너지·금융·우주를 잇는 미래 산업 그룹",
+      "metrics": [
+        [
+          "방산 수출",
+          "기준",
+          "2.5x",
+          100,
+          250
+        ],
+        [
+          "태양광 캐파",
+          "기준",
+          "+45%",
+          100,
+          145
+        ],
+        [
+          "우주 사업",
+          "기준",
+          "본격화",
+          100,
+          220
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "미래를 향한\n담대한 도전",
+      "subtitle": "Hanwha",
+      "contact": "brand-inspired sample deck · 상표는 한화 (Hanwha Group)의 자산입니다"
+    }
+  ]
+}

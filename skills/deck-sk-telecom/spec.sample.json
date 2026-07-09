@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "SK텔레콤",
+    "eyebrow": "SK Telecom"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "SK Telecom",
+      "title": "통신을 넘어,\nAI 컴퍼니로",
+      "subtitle": "Connectivity · AI · Cloud · Media"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "통신 기반 위에 AI를 얹다"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "통신 기반 위에 AI를 얹다",
+      "cols": 2,
+      "cells": [
+        [
+          "유무선 통신",
+          "5G 네트워크로 국내 통신 시장의 리더십을 유지합니다."
+        ],
+        [
+          "AI (에이닷)",
+          "AI 개인비서와 AIDC로 AI 서비스를 확장합니다."
+        ],
+        [
+          "데이터센터 · 클라우드",
+          "AI 데이터센터·클라우드로 인프라 사업을 키웁니다."
+        ],
+        [
+          "미디어",
+          "IPTV·콘텐츠로 미디어 경험을 넓힙니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "통신을 넘어 AI 컴퍼니로 전환하는 리더",
+      "metrics": [
+        [
+          "AI 매출 비중",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "AIDC 캐파",
+          "기준",
+          "2.5x",
+          100,
+          250
+        ],
+        [
+          "구독 서비스",
+          "기준",
+          "+40%",
+          100,
+          140
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "AI로 연결되는\n새로운 일상",
+      "subtitle": "SK Telecom",
+      "contact": "brand-inspired sample deck · 상표는 SK텔레콤 (SK Telecom Co., Ltd.)의 자산입니다"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "kakao",
+  "label": "Kakao",
+  "label_ko": "카카오",
+  "tagline": "관계를 잇는 플랫폼으로 만드는 일상의 혁신",
+  "triggers_ko": [
+    "카카오 발표자료",
+    "Kakao 덱",
+    "카카오 회사소개",
+    "Kakao brand deck"
+  ],
+  "art_direction": "friendly rounded flat illustration, Kakao yellow with dark ink, warm minimal, no logos",
+  "accent_source": "Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우엔 어두운 텍스트 규정), brandcolorcode.com 교차확인. Near-black #1E1E1E 보조",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "카카오 (Kakao Corp.)"
+}

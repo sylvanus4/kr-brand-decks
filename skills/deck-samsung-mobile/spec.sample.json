@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "삼성전자 모바일",
+    "eyebrow": "Samsung Galaxy"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Samsung Galaxy",
+      "title": "일상을 바꾸는\n모바일 경험",
+      "subtitle": "Galaxy · 스마트폰 · 웨어러블 · 갤럭시 AI"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "디바이스와 AI가 만나는 모바일 생태계"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "디바이스와 AI가 만나는 모바일 생태계",
+      "cols": 2,
+      "cells": [
+        [
+          "갤럭시 스마트폰",
+          "플래그십부터 보급형까지 폭넓은 라인업으로 글로벌 시장을 이끕니다."
+        ],
+        [
+          "태블릿 · PC",
+          "갤럭시 탭·북으로 생산성과 창작 경험을 확장합니다."
+        ],
+        [
+          "웨어러블",
+          "워치·버즈로 건강·오디오 경험을 손목과 귀로 넓힙니다."
+        ],
+        [
+          "갤럭시 AI",
+          "온디바이스 AI로 번역·요약·촬영 경험을 재정의합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "갤럭시 생태계로 모바일 경험을 혁신하는 역량",
+      "metrics": [
+        [
+          "갤럭시 AI 탑재 확대",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "폴더블 비중",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "생태계 연결 기기",
+          "기준",
+          "+40%",
+          100,
+          140
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "모바일의 미래를\n갤럭시로 그립니다",
+      "subtitle": "Samsung Galaxy",
+      "contact": "brand-inspired sample deck · 상표는 삼성전자 (Samsung Electronics Co., Ltd.)의 자산입니다"
+    }
+  ]
+}
