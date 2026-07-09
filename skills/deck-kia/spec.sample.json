@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "기아",
+    "eyebrow": "Kia"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Kia",
+      "title": "영감을 주는\n움직임",
+      "subtitle": "EV · SUV · PBV · Mobility"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "전동화와 목적기반차량으로의 전환"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "전동화와 목적기반차량으로의 전환",
+      "cols": 2,
+      "cells": [
+        [
+          "EV 라인업",
+          "전용 전기차 라인업으로 대중 전동화를 이끕니다."
+        ],
+        [
+          "SUV",
+          "글로벌 인기 SUV로 브랜드 판매의 중심을 담당합니다."
+        ],
+        [
+          "PBV",
+          "목적기반차량으로 물류·모빌리티 신시장을 개척합니다."
+        ],
+        [
+          "모빌리티 솔루션",
+          "구독·카헤일링 등 서비스로 이동 경험을 확장합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "지속가능한 모빌리티 솔루션 프로바이더",
+      "metrics": [
+        [
+          "EV 비중",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "PBV 신사업",
+          "기준",
+          "본격화",
+          100,
+          220
+        ],
+        [
+          "브랜드 선호",
+          "기준",
+          "+35%",
+          100,
+          135
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "Movement\nthat inspires",
+      "subtitle": "Kia",
+      "contact": "brand-inspired sample deck · 상표는 기아 (Kia Corporation)의 자산입니다"
+    }
+  ]
+}

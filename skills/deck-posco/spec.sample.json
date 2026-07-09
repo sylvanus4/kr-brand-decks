@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "포스코",
+    "eyebrow": "POSCO"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "POSCO",
+      "title": "소재로 미래를\n짓다",
+      "subtitle": "Steel · Battery Materials · Lithium · Green"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "철강과 2차전지 소재의 균형 성장"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "철강과 2차전지 소재의 균형 성장",
+      "cols": 2,
+      "cells": [
+        [
+          "철강",
+          "친환경 고급강으로 글로벌 철강 리더십을 이어갑니다."
+        ],
+        [
+          "2차전지 소재",
+          "양·음극재로 배터리 밸류체인의 핵심을 담당합니다."
+        ],
+        [
+          "리튬 · 니켈",
+          "원료 확보로 소재 사업의 수직계열화를 완성합니다."
+        ],
+        [
+          "친환경",
+          "수소·저탄소 공정으로 탄소중립 전환을 추진합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "철강을 넘어 2차전지 소재로 확장하는 소재 기업",
+      "metrics": [
+        [
+          "2차전지 소재 매출",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "저탄소 공정",
+          "기준",
+          "본격화",
+          100,
+          220
+        ],
+        [
+          "리튬 자급",
+          "기준",
+          "+50%",
+          100,
+          150
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "더 나은 미래를\n소재로 만듭니다",
+      "subtitle": "POSCO",
+      "contact": "brand-inspired sample deck · 상표는 포스코 (POSCO Holdings)의 자산입니다"
+    }
+  ]
+}

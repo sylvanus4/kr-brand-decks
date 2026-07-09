@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "LG에너지솔루션",
+    "eyebrow": "LG Energy Solution"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "LG Energy Solution",
+      "title": "에너지 전환을\n배터리로 이끌다",
+      "subtitle": "EV Battery · ESS · 소형전지 · 소재"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "셀부터 소재까지 배터리 밸류체인"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "셀부터 소재까지 배터리 밸류체인",
+      "cols": 2,
+      "cells": [
+        [
+          "자동차 전지",
+          "글로벌 완성차와 협력해 전기차 배터리 시장을 선도합니다."
+        ],
+        [
+          "ESS",
+          "재생에너지 저장 시스템으로 전력망 안정화에 기여합니다."
+        ],
+        [
+          "소형전지",
+          "IT·무선기기용 소형 셀로 다양한 응용처를 지원합니다."
+        ],
+        [
+          "배터리 소재·순환",
+          "핵심 소재 내재화와 리사이클로 지속가능성을 높입니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "전지 전문 기업으로 여는 에너지 전환",
+      "metrics": [
+        [
+          "생산 캐파",
+          "기준",
+          "2.5x",
+          100,
+          250
+        ],
+        [
+          "북미 비중",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ],
+        [
+          "소재 내재화",
+          "기준",
+          "+50%",
+          100,
+          150
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "We CHARGE\ntoward a better future",
+      "subtitle": "LG Energy Solution",
+      "contact": "brand-inspired sample deck · 상표는 LG에너지솔루션 (LG Energy Solution Ltd.)의 자산입니다"
+    }
+  ]
+}

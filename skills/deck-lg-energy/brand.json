@@ -1,0 +1,16 @@
+{
+  "slug": "lg-energy",
+  "label": "LG Energy Solution",
+  "label_ko": "LG에너지솔루션",
+  "tagline": "전지 전문 기업으로 여는 에너지 전환",
+  "triggers_ko": [
+    "LG에너지솔루션 발표자료",
+    "LG Energy Solution 덱",
+    "LG에너지솔루션 회사소개",
+    "LG Energy Solution brand deck"
+  ],
+  "art_direction": "clean energy / battery cell imagery, LG red accent, technical precision, no logos",
+  "accent_source": "LG Red #A50034 — lgensol.com 공식 CI RGB(165,0,52)/Pantone 207C 일치",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "LG에너지솔루션 (LG Energy Solution Ltd.)"
+}

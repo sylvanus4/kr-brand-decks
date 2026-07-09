@@ -1,0 +1,16 @@
+{
+  "slug": "posco",
+  "label": "POSCO",
+  "label_ko": "포스코",
+  "tagline": "철강을 넘어 2차전지 소재로 확장하는 소재 기업",
+  "triggers_ko": [
+    "포스코 발표자료",
+    "POSCO 덱",
+    "포스코 회사소개",
+    "POSCO brand deck"
+  ],
+  "art_direction": "industrial steel + battery-materials imagery, POSCO blue, strong geometric, no logos",
+  "accent_source": "POSCO Blue #053080 + Light Blue #00A5E5 — posco.com 공식 CI, brandcolorcode 교차확인",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "포스코 (POSCO Holdings)"
+}

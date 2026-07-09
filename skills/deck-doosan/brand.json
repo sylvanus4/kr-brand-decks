@@ -1,0 +1,16 @@
+{
+  "slug": "doosan",
+  "label": "Doosan",
+  "label_ko": "두산",
+  "tagline": "에너지·기계·첨단산업을 잇는 인프라 지원 기업",
+  "triggers_ko": [
+    "두산 발표자료",
+    "Doosan 덱",
+    "두산 회사소개",
+    "Doosan brand deck"
+  ],
+  "art_direction": "energy + machinery imagery, Doosan blue, engineering precision, no logos",
+  "accent_source": "Doosan Blue #0017A8 + Process Blue #0087CE — doosan.com 공식 CI 가이드라인",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "두산 (Doosan Corporation)"
+}

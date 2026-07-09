@@ -1,0 +1,16 @@
+{
+  "slug": "hd-hyundai",
+  "label": "HD Hyundai",
+  "label_ko": "HD현대",
+  "tagline": "조선·에너지·기계를 아우르는 중공업 리더",
+  "triggers_ko": [
+    "HD현대 발표자료",
+    "HD Hyundai 덱",
+    "HD현대 회사소개",
+    "HD Hyundai brand deck"
+  ],
+  "art_direction": "heavy-industry / shipyard imagery, HD green-blue accents, robust minimal, no logos",
+  "accent_source": "HD Heritage Green #00AD1D / Discovery Blue #003087 — 2023 리브랜드 (unverified 추정, 다음뉴스 리브랜드 보도 참고)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "HD현대 (HD Hyundai Co., Ltd.)"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "sk-hynix",
+  "label": "SK hynix",
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "55565A",
+  "muted": "9B9CA1",
+  "surface": "F7F7F8",
+  "border": "E5E5E8",
+  "bg": "FFFFFF",
+  "accent": "EA002C",
+  "divider_bg": "1A1A1A",
+  "divider_ink": "FFFFFF",
+  "_source": "SK Red #EA002C (Pantone 186C) from skhynix.com CI page cross-checked with sk.co.kr Group CI. SK Orange #F47725 is the secondary. divider_bg near-black #1A1A1A with SK-red accent (a full-red section break is available per-slide via bg:EA002C). Typeface -> Pretendard free fallback (no public SK hynix brand font). Unofficial brand-inspired theme; trademarks belong to SK hynix Inc."
+}

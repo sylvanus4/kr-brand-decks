@@ -1,0 +1,16 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "naver",
+  "label": "NAVER",
+  "accent": "03C75A",
+  "divider_bg": "04371F",
+  "accent_ink": "02843B",
+  "_source": "NAVER Green #03C75A — navercorp.com 공식 브랜드가이드 HEX/RGB(3,199,90)/Pantone 2270C 직접 확인 | Unofficial brand-inspired theme; trademarks belong to 네이버 (NAVER Corp.)"
+}

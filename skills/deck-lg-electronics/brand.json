@@ -1,0 +1,16 @@
+{
+  "slug": "lg-electronics",
+  "label": "LG Electronics",
+  "label_ko": "LG전자",
+  "tagline": "가전·TV·전장을 아우르는 스마트 라이프 솔루션",
+  "triggers_ko": [
+    "LG전자 발표자료",
+    "LG Electronics 덱",
+    "LG전자 회사소개",
+    "LG Electronics brand deck"
+  ],
+  "art_direction": "warm premium home-life imagery, LG red accent, clean minimal, no logos",
+  "accent_source": "LG Red #A50034 (Heritage Red, Pantone 207C) — lgensol.com CI RGB(165,0,52) 일치, brandpalettes.com 교차확인",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "LG전자 (LG Electronics Inc.)"
+}

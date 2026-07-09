@@ -1,0 +1,11 @@
+{
+  "slug": "sk-hynix",
+  "label": "SK hynix",
+  "label_ko": "SK하이닉스",
+  "tagline": "DRAM·NAND·HBM으로 AI 시대 메모리를 선도하는 리더십",
+  "triggers_ko": ["SK하이닉스 발표자료", "sk hynix 덱", "하이닉스 브랜드 ppt", "SK하이닉스 회사소개"],
+  "art_direction": "clean minimal line-art of semiconductor wafers/chip circuitry, subtle red-to-orange accent lighting, dark neutral background, high-tech precision feel, no logos or wordmarks",
+  "accent_source": "SK Red #EA002C (Pantone 186C) from skhynix.com CI page, cross-checked with sk.co.kr Group CI; SK Orange #F47725 secondary",
+  "font_note": "공개 브랜드 전용서체 확인 안 됨 → Pretendard 무료 폴백, 대안 Noto Sans KR",
+  "trademark_owner": "SK하이닉스 (SK hynix Inc.)"
+}

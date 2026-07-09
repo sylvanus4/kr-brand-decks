@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "CJ제일제당",
+    "eyebrow": "CJ CheilJedang"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "CJ CheilJedang",
+      "title": "K-푸드를\n세계의 식탁으로",
+      "subtitle": "Food · Bio · Feed&Care · Global"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "식품과 바이오의 두 성장 축"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "식품과 바이오의 두 성장 축",
+      "cols": 2,
+      "cells": [
+        [
+          "식품",
+          "비비고 등 글로벌 브랜드로 K-푸드를 확산합니다."
+        ],
+        [
+          "바이오",
+          "아미노산 등 그린바이오로 세계 시장을 선도합니다."
+        ],
+        [
+          "Feed&Care",
+          "사료·축산 사업으로 글로벌 식량 밸류체인에 참여합니다."
+        ],
+        [
+          "글로벌",
+          "북미·유럽 생산기지로 해외 매출을 확대합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "식품과 바이오로 K-푸드를 세계에 알리는 기업",
+      "metrics": [
+        [
+          "글로벌 식품 매출",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "바이오 매출",
+          "기준",
+          "+45%",
+          100,
+          145
+        ],
+        [
+          "비비고 브랜드",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "K-푸드로\n세계를 잇습니다",
+      "subtitle": "CJ CheilJedang",
+      "contact": "brand-inspired sample deck · 상표는 CJ제일제당 (CJ CheilJedang Corp.)의 자산입니다"
+    }
+  ]
+}

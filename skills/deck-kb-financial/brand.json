@@ -1,0 +1,16 @@
+{
+  "slug": "kb-financial",
+  "label": "KB Financial Group",
+  "label_ko": "KB금융그룹",
+  "tagline": "은행·증권·보험을 아우르는 종합 금융 그룹",
+  "triggers_ko": [
+    "KB금융그룹 발표자료",
+    "KB Financial Group 덱",
+    "KB금융그룹 회사소개",
+    "KB Financial Group brand deck"
+  ],
+  "art_direction": "trustworthy finance imagery, KB yellow accent with dark ink, warm professional, no logos",
+  "accent_source": "KB Yellow #FFBC00 (대표컬러, 정확 hex는 공식 다운로드 자산에만 — 추정) — kbfg.com CI. 옐로우 divider 금지 → 차콜 #2B2B2B 사용",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "KB금융그룹 (KB Financial Group Inc.)"
+}

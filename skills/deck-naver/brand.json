@@ -1,0 +1,16 @@
+{
+  "slug": "naver",
+  "label": "NAVER",
+  "label_ko": "네이버",
+  "tagline": "검색·커머스·핀테크·AI를 잇는 기술 플랫폼",
+  "triggers_ko": [
+    "네이버 발표자료",
+    "NAVER 덱",
+    "네이버 회사소개",
+    "NAVER brand deck"
+  ],
+  "art_direction": "clean flat tech illustration, NAVER green accent, white space, friendly geometric, no logos",
+  "accent_source": "NAVER Green #03C75A — navercorp.com 공식 브랜드가이드 HEX/RGB(3,199,90)/Pantone 2270C 직접 확인",
+  "font_note": "Pretendard 폴백 (나눔스퀘어 계열 결)",
+  "trademark_owner": "네이버 (NAVER Corp.)"
+}

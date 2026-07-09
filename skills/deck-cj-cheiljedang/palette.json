@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "cj-cheiljedang",
+  "label": "CJ CheilJedang",
+  "accent": "EF151E",
+  "divider_bg": "A30F16",
+  "_source": "CJ Blossom Red #EF151E (계열 CJ Logistics 공식 추출값, CJ그룹 Blossom 3색과 일치 — CJ제일제당 전용 PDF 추출 실패로 추정). divider는 어둡게(#A30F16) | Unofficial brand-inspired theme; trademarks belong to CJ제일제당 (CJ CheilJedang Corp.)"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "deck-celltrion",
+  "description": "Celltrion (셀트리온) brand-themed PPTX deck generator (unofficial).",
+  "version": "0.1.0",
+  "author": {
+    "name": "sylvanus4"
+  },
+  "homepage": "https://github.com/sylvanus4/kr-brand-decks",
+  "repository": "https://github.com/sylvanus4/kr-brand-decks",
+  "license": "MIT"
+}

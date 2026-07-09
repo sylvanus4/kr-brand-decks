@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "KB금융그룹",
+    "eyebrow": "KB Financial Group"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "KB Financial Group",
+      "title": "고객의 내일을\n함께 그리다",
+      "subtitle": "Bank · Securities · Insurance · Digital"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "은행을 축으로 한 종합 금융 포트폴리오"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "은행을 축으로 한 종합 금융 포트폴리오",
+      "cols": 2,
+      "cells": [
+        [
+          "은행",
+          "KB국민은행을 중심으로 리테일 금융을 선도합니다."
+        ],
+        [
+          "증권",
+          "자본시장 서비스로 자산관리·IB를 제공합니다."
+        ],
+        [
+          "보험",
+          "생명·손해보험으로 생애주기 보장을 지원합니다."
+        ],
+        [
+          "디지털 · 글로벌",
+          "디지털 전환과 해외 진출로 미래 성장을 준비합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "은행·증권·보험을 아우르는 종합 금융 그룹",
+      "metrics": [
+        [
+          "비은행 이익 비중",
+          "기준",
+          "+40%",
+          100,
+          140
+        ],
+        [
+          "디지털 고객",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "글로벌 이익",
+          "기준",
+          "2.5x",
+          100,
+          250
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "고객의 내일에\n가치를 더합니다",
+      "subtitle": "KB Financial Group",
+      "contact": "brand-inspired sample deck · 상표는 KB금융그룹 (KB Financial Group Inc.)의 자산입니다"
+    }
+  ]
+}

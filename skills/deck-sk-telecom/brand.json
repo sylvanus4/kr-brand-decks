@@ -1,0 +1,16 @@
+{
+  "slug": "sk-telecom",
+  "label": "SK Telecom",
+  "label_ko": "SK텔레콤",
+  "tagline": "통신을 넘어 AI 컴퍼니로 전환하는 리더",
+  "triggers_ko": [
+    "SK텔레콤 발표자료",
+    "SK Telecom 덱",
+    "SK텔레콤 회사소개",
+    "SK Telecom brand deck"
+  ],
+  "art_direction": "connectivity + AI imagery, SK red accent, sleek futuristic, no logos",
+  "accent_source": "SK Red #EA002C (SK그룹 공통 CI, SKT 로고 적용) — sk.co.kr CI. divider는 대비 안전 위해 어둡게 조정(#A8001F)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "SK텔레콤 (SK Telecom Co., Ltd.)"
+}

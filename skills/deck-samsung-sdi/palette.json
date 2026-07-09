@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "samsung-sdi",
+  "label": "Samsung SDI",
+  "accent": "1428A0",
+  "divider_bg": "1428A0",
+  "_source": "Samsung Blue #1428A0 — samsungsdi.com/about-sdi/ci.html 공식 RGB(20,40,160)/Pantone 286C 일치 | Unofficial brand-inspired theme; trademarks belong to 삼성SDI (Samsung SDI Co., Ltd.)"
+}

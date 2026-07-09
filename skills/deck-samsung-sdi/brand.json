@@ -1,0 +1,16 @@
+{
+  "slug": "samsung-sdi",
+  "label": "Samsung SDI",
+  "label_ko": "삼성SDI",
+  "tagline": "배터리와 전자재료로 만드는 지속가능 미래",
+  "triggers_ko": [
+    "삼성SDI 발표자료",
+    "Samsung SDI 덱",
+    "삼성SDI 회사소개",
+    "Samsung SDI brand deck"
+  ],
+  "art_direction": "battery cell + advanced materials imagery, Samsung blue accent, clean tech, no logos",
+  "accent_source": "Samsung Blue #1428A0 — samsungsdi.com/about-sdi/ci.html 공식 RGB(20,40,160)/Pantone 286C 일치",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "삼성SDI (Samsung SDI Co., Ltd.)"
+}

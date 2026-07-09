@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "두산",
+    "eyebrow": "Doosan"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Doosan",
+      "title": "내일을 움직이는\n힘",
+      "subtitle": "Energy · Machinery · Semiconductor · Robotics"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "에너지와 첨단 산업의 성장 축"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "에너지와 첨단 산업의 성장 축",
+      "cols": 2,
+      "cells": [
+        [
+          "에너지",
+          "발전 설비와 SMR·수소로 미래 에너지에 대응합니다."
+        ],
+        [
+          "건설기계",
+          "글로벌 건설기계 라인업으로 인프라를 지원합니다."
+        ],
+        [
+          "반도체",
+          "테스나 등 후공정 역량으로 반도체 밸류체인에 참여합니다."
+        ],
+        [
+          "로보틱스",
+          "협동로봇으로 제조 자동화 시장을 확대합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "에너지·기계·첨단산업을 잇는 인프라 지원 기업",
+      "metrics": [
+        [
+          "SMR·수소",
+          "기준",
+          "본격화",
+          100,
+          220
+        ],
+        [
+          "반도체 매출",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "협동로봇",
+          "기준",
+          "3.0x",
+          100,
+          300
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "내일을 위한\n오늘의 기술",
+      "subtitle": "Doosan",
+      "contact": "brand-inspired sample deck · 상표는 두산 (Doosan Corporation)의 자산입니다"
+    }
+  ]
+}

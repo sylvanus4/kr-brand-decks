@@ -1,0 +1,11 @@
+{
+  "slug": "samsung-semi",
+  "label": "Samsung Semiconductor",
+  "label_ko": "삼성전자 반도체",
+  "tagline": "메모리·파운드리·시스템 반도체를 아우르는 종합 반도체 역량",
+  "triggers_ko": ["삼성반도체 발표자료", "삼성 반도체 ppt", "samsung semiconductor 덱", "삼성 DS 브랜드 덱"],
+  "art_direction": "clean geometric tech aesthetic, deep blue (#1428A0) to navy gradient, thin glowing circuit/wafer-pattern lines, minimal line-art icons, no logos, no wordmarks",
+  "accent_source": "Samsung Blue #1428A0 (Pantone 286C) — cross-checked across brandcolors.net·brandpalettes.com·designpieces.com, with an exact RGB(20,40,160) match on Samsung SDI's official CI page (samsungsdi.com/about-sdi/ci.html)",
+  "font_note": "Samsung Sharp Sans / SamsungOne (사유 서체, 외부 라이선스 불가) → Pretendard 무료 폴백, 대안 Noto Sans KR",
+  "trademark_owner": "삼성전자 (Samsung Electronics Co., Ltd.)"
+}

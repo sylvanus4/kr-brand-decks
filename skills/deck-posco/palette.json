@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "posco",
+  "label": "POSCO",
+  "accent": "053080",
+  "divider_bg": "053080",
+  "_source": "POSCO Blue #053080 + Light Blue #00A5E5 — posco.com 공식 CI, brandcolorcode 교차확인 | Unofficial brand-inspired theme; trademarks belong to 포스코 (POSCO Holdings)"
+}

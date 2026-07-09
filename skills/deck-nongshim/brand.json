@@ -1,0 +1,16 @@
+{
+  "slug": "nongshim",
+  "label": "Nongshim",
+  "label_ko": "농심",
+  "tagline": "라면과 스낵으로 세계인의 입맛을 사로잡는 식품 기업",
+  "triggers_ko": [
+    "농심 발표자료",
+    "Nongshim 덱",
+    "농심 회사소개",
+    "Nongshim brand deck"
+  ],
+  "art_direction": "appetizing food imagery, Nongshim red accent, warm inviting, no logos",
+  "accent_source": "Nongshim Red #DF0029 + Orange #EC870C — eng.nongshim.com/about/ci 공식 직접 확인 (흰 텍스트 대비 5:1 AA)",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "농심 (Nongshim Co., Ltd.)"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "hyundai-motor",
+  "label": "Hyundai Motor",
+  "label_ko": "현대자동차",
+  "tagline": "내연기관을 넘어 전동화·수소·SDV로 나아가는 모빌리티",
+  "triggers_ko": [
+    "현대자동차 발표자료",
+    "Hyundai Motor 덱",
+    "현대자동차 회사소개",
+    "Hyundai Motor brand deck"
+  ],
+  "art_direction": "premium automotive imagery, Hyundai deep blue, progressive minimal, no logos",
+  "accent_source": "Hyundai Blue #002C5F — hyundai.com/kr CI 공식 확인, brandpalettes 교차확인",
+  "font_note": "Hyundai Sans (사유) → Pretendard 폴백",
+  "trademark_owner": "현대자동차 (Hyundai Motor Company)"
+}

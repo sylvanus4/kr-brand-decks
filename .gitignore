@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local secrets / env (never commit)
+.env
+*.key
+*_secret*
+credentials.json
+
+# Build scratch (examples/*.pdf and *.png ARE committed as showcase; keep pptx too)
+*.tmp
+/tmp/

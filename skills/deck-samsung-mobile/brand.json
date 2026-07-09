@@ -1,0 +1,16 @@
+{
+  "slug": "samsung-mobile",
+  "label": "Samsung Galaxy",
+  "label_ko": "삼성전자 모바일",
+  "tagline": "갤럭시 생태계로 모바일 경험을 혁신하는 역량",
+  "triggers_ko": [
+    "삼성전자 모바일 발표자료",
+    "Samsung Galaxy 덱",
+    "삼성전자 모바일 회사소개",
+    "Samsung Galaxy brand deck"
+  ],
+  "art_direction": "sleek premium device photography vibe, deep blue accent on near-black, minimal UI motifs, no logos",
+  "accent_source": "Samsung Blue #1428A0 (Pantone 286C), Galaxy 브랜드는 near-black 병용 — brandcolorcode.com, samsungsdi.com CI RGB(20,40,160) 일치",
+  "font_note": "SamsungOne / Samsung Sharp Sans (사유) → Pretendard 폴백",
+  "trademark_owner": "삼성전자 (Samsung Electronics Co., Ltd.)"
+}

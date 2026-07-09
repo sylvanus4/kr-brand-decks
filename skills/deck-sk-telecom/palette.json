@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "sk-telecom",
+  "label": "SK Telecom",
+  "accent": "EA002C",
+  "divider_bg": "A8001F",
+  "_source": "SK Red #EA002C (SK그룹 공통 CI, SKT 로고 적용) — sk.co.kr CI. divider는 대비 안전 위해 어둡게 조정(#A8001F) | Unofficial brand-inspired theme; trademarks belong to SK텔레콤 (SK Telecom Co., Ltd.)"
+}

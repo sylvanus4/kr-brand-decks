@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "company": "삼성SDI",
+    "eyebrow": "Samsung SDI"
+  },
+  "slides": [
+    {
+      "layout": "cover",
+      "eyebrow": "Samsung SDI",
+      "title": "배터리와 소재로\n미래를 충전하다",
+      "subtitle": "EV Battery · ESS · 소형전지 · 전자재료"
+    },
+    {
+      "layout": "toc",
+      "title": "Contents",
+      "items": [
+        [
+          "01",
+          "회사 개요",
+          "03"
+        ],
+        [
+          "02",
+          "핵심 사업 영역",
+          "04"
+        ],
+        [
+          "03",
+          "성장 지표",
+          "05"
+        ],
+        [
+          "04",
+          "미래 비전",
+          "06"
+        ]
+      ]
+    },
+    {
+      "layout": "divider",
+      "num": "01",
+      "title": "핵심 사업 영역",
+      "subtitle": "고에너지 배터리와 첨단 전자재료"
+    },
+    {
+      "layout": "icongrid",
+      "eyebrow": "Business Portfolio",
+      "title": "핵심 사업 영역",
+      "subtitle": "고에너지 배터리와 첨단 전자재료",
+      "cols": 2,
+      "cells": [
+        [
+          "자동차 전지",
+          "고에너지 밀도 배터리로 프리미엄 전기차 시장에 대응합니다."
+        ],
+        [
+          "ESS",
+          "전력용·주택용 저장장치로 에너지 안정성을 지원합니다."
+        ],
+        [
+          "소형전지",
+          "원형·파우치 셀로 전동공구·모빌리티를 구동합니다."
+        ],
+        [
+          "전자재료",
+          "반도체·디스플레이 소재로 IT 산업의 기반을 제공합니다."
+        ]
+      ]
+    },
+    {
+      "layout": "kpi",
+      "eyebrow": "Growth",
+      "title": "성장 지표",
+      "subtitle": "배터리와 전자재료로 만드는 지속가능 미래",
+      "metrics": [
+        [
+          "전고체 준비",
+          "기준",
+          "본격화",
+          100,
+          220
+        ],
+        [
+          "ESS 매출",
+          "기준",
+          "2.0x",
+          100,
+          200
+        ],
+        [
+          "소재 매출",
+          "기준",
+          "+35%",
+          100,
+          135
+        ]
+      ],
+      "note": "※ 수치는 브랜드 테마 디자인 예시입니다 (illustrative placeholder values)"
+    },
+    {
+      "layout": "closing",
+      "title": "지속가능한 미래를\n함께 충전합니다",
+      "subtitle": "Samsung SDI",
+      "contact": "brand-inspired sample deck · 상표는 삼성SDI (Samsung SDI Co., Ltd.)의 자산입니다"
+    }
+  ]
+}
