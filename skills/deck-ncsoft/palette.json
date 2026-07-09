@@ -1,0 +1,16 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "ncsoft",
+  "label": "NCSOFT",
+  "accent": "8243F2",
+  "divider_bg": "252628",
+  "accent_ink": "6B2FD0",
+  "_source": "NCSOFT purple #8243F2 — nc.com 'purple-square' 디자인시스템 CSS 관찰값(공식 CI hex 미확정, 추정). divider는 관찰된 다크 #252628 | Unofficial brand-inspired theme; trademarks belong to 엔씨소프트 (NCSOFT)"
+}

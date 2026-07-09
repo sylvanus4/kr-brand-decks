@@ -29,6 +29,9 @@
 | KB금융그룹 | `#FFBC00` | `#2B2B2B` | ⚠️ | KB Yellow 대표컬러(정확 hex는 공식 다운로드 자산에만). 옐로우 divider 금지 → 차콜 |
 | 신한금융그룹 | `#0046FF` | `#0046FF` | 🟡 | Shinhan Blue. shinhanci.co.kr + color-hex 교차(대비 6.3:1) |
 | CJ제일제당 | `#EF151E` | `#A30F16` | ⚠️ | CJ Blossom Red(계열 CJ Logistics 공식값 준용, 전용 PDF 추출 실패). divider 다크 조정 |
+| 업스테이지 | `#4D65FF` | `#4D65FF` | 🟡 | Upstage 블루바이올렛 — upstage.ai 웹 CSS 관찰값(공식 CI hex 미공개) |
+| 토스 | `#0064FF` | `#0064FF` | 🟡 | Toss Blue — 널리 문서화된 브랜드색, 다수 소스 교차(공식 CI hex 미확정) |
+| 엔씨소프트 | `#8243F2` | `#252628` | ⚠️ | NCSOFT 퍼플 — nc.com 'purple-square' 디자인시스템 CSS 관찰값(공식 CI 미확정). divider 다크 #252628 |
 
 ## 대비(접근성) 처리
 

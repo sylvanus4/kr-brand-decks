@@ -1,0 +1,15 @@
+{
+  "font": "Pretendard",
+  "ink": "1A1A1A",
+  "sub": "4A4A4A",
+  "muted": "8A8A8A",
+  "surface": "F5F6F8",
+  "border": "E1E3E8",
+  "bg": "FFFFFF",
+  "divider_ink": "FFFFFF",
+  "name": "toss",
+  "label": "Toss",
+  "accent": "0064FF",
+  "divider_bg": "0064FF",
+  "_source": "Toss Blue #0064FF — 토스 브랜드(널리 문서화), 다수 소스 교차(공식 CI hex 미확정, medium) | Unofficial brand-inspired theme; trademarks belong to 비바리퍼블리카 (Viva Republica, Toss)"
+}

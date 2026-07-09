@@ -1,0 +1,16 @@
+{
+  "slug": "toss",
+  "label": "Toss",
+  "label_ko": "토스",
+  "tagline": "금융을 쉽고 간편하게, 토스 슈퍼앱",
+  "triggers_ko": [
+    "토스 발표자료",
+    "Toss 덱",
+    "토스 회사소개",
+    "Toss brand deck"
+  ],
+  "art_direction": "clean friendly fintech illustration, Toss blue accent, minimal rounded, no logos",
+  "accent_source": "Toss Blue #0064FF — 토스 브랜드(널리 문서화), 다수 소스 교차(공식 CI hex 미확정, medium)",
+  "font_note": "Pretendard 폴백 (토스 전용서체 Toss Face/Product Sans류는 사유)",
+  "trademark_owner": "비바리퍼블리카 (Viva Republica, Toss)"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "ncsoft",
+  "label": "NCSOFT",
+  "label_ko": "엔씨소프트",
+  "tagline": "게임과 AI로 새로운 재미를 만드는 기업",
+  "triggers_ko": [
+    "엔씨소프트 발표자료",
+    "NCSOFT 덱",
+    "엔씨소프트 회사소개",
+    "NCSOFT brand deck"
+  ],
+  "art_direction": "modern game-tech illustration, purple accent on dark, minimal, no logos or characters",
+  "accent_source": "NCSOFT purple #8243F2 — nc.com 'purple-square' 디자인시스템 CSS 관찰값(공식 CI hex 미확정, 추정). divider는 관찰된 다크 #252628",
+  "font_note": "Pretendard 폴백",
+  "trademark_owner": "엔씨소프트 (NCSOFT)"
+}

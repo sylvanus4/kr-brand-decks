@@ -160,7 +160,7 @@ def main():
         "name": "kr-brand-decks",
         "owner": {"name": "sylvanus4"},
         "metadata": {
-            "description": "한국 주요 20개 기업 브랜드 테마 PPTX 데크 스킬 모음 (비공식). "
+            "description": "한국 주요 기업 브랜드 테마 PPTX 데크 스킬 모음 (비공식). "
                            "Unofficial Korean-enterprise brand-themed PPTX deck skills.",
             "pluginRoot": "./skills",
         },
