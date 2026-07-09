@@ -1,7 +1,8 @@
 {
   "meta": {
     "company": "삼성전자 모바일",
-    "eyebrow": "Samsung Galaxy"
+    "eyebrow": "Samsung Galaxy",
+    "theme": "corporate-clean"
   },
   "slides": [
     {

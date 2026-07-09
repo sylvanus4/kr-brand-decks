@@ -18,6 +18,7 @@ format are owned by code — so every deck comes out clean and consistent.
 - **23개 독립 스킬** — 회사마다 `deck-<company>` 스킬 하나. 검증된 브랜드 컬러 팔레트 + 레퍼런스급 네이티브 레이아웃.
 - **레퍼런스급 레이아웃 세트** — 표지·목차·섹션 디바이더 · **Lucide 라인 아이콘 그리드** · **좌측 텍스트 + 우측 3D 일러스트(textfigure)** · **AS-IS→차세대 비교표** · **간트 로드맵** · **before/after 임팩트 차트** · 클로징. 색은 팔레트가, 포맷은 코드가 소유.
 - **회사별 실제 11장 샘플 PDF** 동봉 — `skills/deck-<company>/examples/`. 전 기업이 아이콘·비교표·간트·임팩트 차트를 갖춘 **11장 리치 데크**. **삼성전자 반도체·SK하이닉스**는 여기에 **AI 히어로 이미지**까지 얹은 풀 쇼케이스(이미지는 선택 기능).
+- **24개 비주얼 테마 + 기획 + 3형식** — 브랜드 색과 직교하는 24가지 스타일(`--theme`), 내용→덱 구성을 결정하는 기획기(`plan_deck.py`), PPTX·PDF·**HTML** 내보내기, 기존 `.pptx` 채우기(`fill_template.py`), 섹션·KPI 아이콘까지.
 - **템플릿 불필요** — python-pptx로 슬라이드를 처음부터 생성. 독점 템플릿·외부 서비스 의존 없음.
 - **안전** — 100% 로컬 실행, 데이터 외부 전송 없음, API 키 불필요(선택적 AI 이미지 제외).
 
@@ -122,6 +123,44 @@ palette.json (검증된 브랜드 색)  +  spec.json (당신의 내용)
 
 모델은 **내용**만 쓰고, 코드가 **색·폰트·레이아웃**을 소유합니다. 그래서 저비용 모델로도
 포맷이 흔들리지 않고 매번 제출급 결과가 나옵니다.
+
+## 🎨 비주얼 테마 (24종)
+
+브랜드 색(팔레트)과 **직교하는 24가지 시각 스타일**(미니멀·에디토리얼·브루탈리스트·스위스·
+빅넘버·스타트업피치·데이터리포트·럭셔리·터미널 등). 같은 회사 색에 다른 룩을 입히거나, 한
+테마를 23개 브랜드 전체에 적용할 수 있습니다. 전체 목록 → **[docs/THEMES.md](docs/THEMES.md)**.
+```bash
+python3 _engine/render_deck.py --palette skills/deck-naver/palette.json \
+  --spec <spec>.json --theme minimal-white --out deck.pptx
+```
+
+## 🧠 기획 (내용 → 덱 구성)
+
+내용과 목적만 주면 **테마 자동 선택 + 레이아웃 구성**을 합니다("기획 능력"). 브리프(topic·
+purpose·sections[kind])를 주면 목적별 테마를 고르고, 섹션 종류(metrics→KPI카드, compare→표,
+timeline→간트, features→아이콘그리드, story→텍스트+패널 …)에 맞는 레이아웃으로 슬라이드를
+짜서 spec을 냅니다. 상세 → **[docs/PLANNING.md](docs/PLANNING.md)**.
+```bash
+python3 tools/plan_deck.py brief.json --out spec.json     # purpose로 테마 자동선택 + 구성
+python3 _engine/render_deck.py --palette <brand>.json --spec spec.json --out deck.pptx --pdf
+```
+
+## 📄 3형식 내보내기 (PPTX · PDF · HTML)
+
+같은 spec에서 세 형식을 냅니다. **PPTX**(네이티브 편집 가능) · **PDF**(soffice) · **HTML**
+(브라우저에서 열고 편집·인쇄, 자기완결 — Node 불필요, 차트는 base64 임베드).
+```bash
+python3 _engine/render_html.py --palette <brand>.json --spec spec.json --out deck.html
+```
+
+## 📋 기존 템플릿 채우기 (디자인 100% 보존)
+
+이미 만든 브랜드 `.pptx`가 있으면, 처음부터 다시 만들지 않고 **원본을 clone + 텍스트만 패치**
+해서 채웁니다(ppt-master 방식). 색·폰트·레이아웃·이미지·애니메이션이 그대로 유지됩니다.
+```bash
+python3 tools/fill_template.py --in template.pptx --list-text          # 편집 대상 텍스트/토큰 확인
+python3 tools/fill_template.py --in template.pptx --values values.json --out filled.pptx
+```
 
 ## 🖼 히어로 이미지 (선택)
 
