@@ -1,0 +1,366 @@
+{
+  "_doc": "Visual THEME presets (orthogonal to brand PALETTE). Each is a set of overrides on THEME_DEFAULTS in render_deck.py. `formal:true` = emoji off / finance-IR-gov safe. `best_for` = purpose tags used by tools/plan_deck.py to auto-pick a theme. Use: render_deck.py --theme <name>.",
+  "themes": {
+    "corporate-clean": {
+      "label": "Corporate Clean",
+      "desc": "무난하고 흔들림 없는 기업 표준",
+      "formal": true,
+      "best_for": [
+        "기업소개",
+        "제안서",
+        "사내교육",
+        "일반보고"
+      ],
+      "cover_style": "solid",
+      "accent_style": "tick",
+      "divider_style": "solid",
+      "section_icons": true
+    },
+    "minimal-white": {
+      "label": "Minimal White",
+      "desc": "여백이 콘텐츠다 — 프리미엄 미니멀",
+      "formal": true,
+      "best_for": [
+        "재무",
+        "IR",
+        "컨설팅",
+        "프리미엄제품"
+      ],
+      "cover_style": "minimal",
+      "cover_align": "center",
+      "accent_style": "tick",
+      "divider_style": "minimal",
+      "cover_title_pt": 50
+    },
+    "executive-dark": {
+      "label": "Executive Dark",
+      "desc": "회의실의 무게감 — 다크+골드감",
+      "formal": true,
+      "best_for": [
+        "IR",
+        "이사회",
+        "M&A",
+        "재무"
+      ],
+      "cover_style": "solid",
+      "accent_style": "tick",
+      "divider_style": "solid",
+      "content_bg": "bg"
+    },
+    "editorial-magazine": {
+      "label": "Editorial Magazine",
+      "desc": "잡지를 넘기는 느낌",
+      "formal": true,
+      "best_for": [
+        "브랜드스토리",
+        "매거진",
+        "컬처리포트"
+      ],
+      "cover_style": "minimal",
+      "accent_style": "underline",
+      "divider_style": "minimal",
+      "content_bg": "surface",
+      "section_icons": true
+    },
+    "bold-brutalist": {
+      "label": "Bold Brutalist",
+      "desc": "규칙을 깨는 확신 — 초대형 블록",
+      "formal": true,
+      "best_for": [
+        "디자인스튜디오",
+        "컨퍼런스",
+        "제품런칭"
+      ],
+      "cover_style": "band",
+      "accent_style": "block",
+      "divider_style": "huge",
+      "cover_title_pt": 60,
+      "eyebrow_track": 200,
+      "section_icons": true
+    },
+    "swiss-grid": {
+      "label": "Swiss International",
+      "desc": "격자 위의 정직함",
+      "formal": true,
+      "best_for": [
+        "테크",
+        "디자인시스템",
+        "정부"
+      ],
+      "cover_style": "minimal",
+      "accent_style": "block",
+      "divider_style": "minimal",
+      "section_icons": true
+    },
+    "tech-gradient": {
+      "label": "Tech Gradient",
+      "desc": "소프트웨어 제품의 광택",
+      "formal": false,
+      "best_for": [
+        "테크",
+        "SaaS",
+        "개발자컨퍼런스",
+        "제품소개"
+      ],
+      "cover_style": "solid",
+      "accent_style": "underline",
+      "divider_style": "solid",
+      "section_icons": true
+    },
+    "pastel-soft": {
+      "label": "Pastel Soft",
+      "desc": "부드럽고 다정한 톤",
+      "formal": false,
+      "best_for": [
+        "소셜",
+        "웰니스",
+        "교육",
+        "D2C"
+      ],
+      "cover_style": "band",
+      "accent_style": "block",
+      "content_bg": "surface",
+      "emoji": true,
+      "section_icons": true
+    },
+    "mono-typographic": {
+      "label": "Mono Typographic",
+      "desc": "글자가 곧 이미지",
+      "formal": true,
+      "best_for": [
+        "컨셉발표",
+        "전략",
+        "아트디렉션"
+      ],
+      "cover_style": "minimal",
+      "cover_align": "center",
+      "accent_style": "none",
+      "divider_style": "huge",
+      "cover_title_pt": 60,
+      "hairline": false
+    },
+    "big-number": {
+      "label": "Big Number",
+      "desc": "숫자가 주인공",
+      "formal": true,
+      "best_for": [
+        "데이터리포트",
+        "실적발표",
+        "성장지표"
+      ],
+      "cover_style": "solid",
+      "accent_style": "block",
+      "divider_style": "huge",
+      "section_icons": true
+    },
+    "blueprint": {
+      "label": "Blueprint",
+      "desc": "설계도 위에 그리는 아이디어",
+      "formal": true,
+      "best_for": [
+        "엔지니어링",
+        "아키텍처",
+        "인프라",
+        "로드맵"
+      ],
+      "cover_style": "solid",
+      "accent_style": "tick",
+      "content_bg": "surface",
+      "eyebrow_upper": false,
+      "section_icons": true
+    },
+    "kraft-warm": {
+      "label": "Kraft & Warm",
+      "desc": "손으로 만든 듯한 온기",
+      "formal": false,
+      "best_for": [
+        "로컬브랜드",
+        "F&B",
+        "라이프스타일",
+        "비영리"
+      ],
+      "cover_style": "minimal",
+      "content_bg": "surface",
+      "accent_style": "underline",
+      "section_icons": true
+    },
+    "neon-dark": {
+      "label": "Neon Dark",
+      "desc": "야간 도시의 에너지",
+      "formal": false,
+      "best_for": [
+        "게이밍",
+        "이벤트",
+        "Web3"
+      ],
+      "cover_style": "solid",
+      "accent_style": "underline",
+      "divider_style": "solid",
+      "section_icons": true
+    },
+    "playful-rounded": {
+      "label": "Playful Rounded",
+      "desc": "유쾌하고 접근하기 쉬움",
+      "formal": false,
+      "best_for": [
+        "소셜",
+        "교육",
+        "커뮤니티",
+        "이벤트"
+      ],
+      "cover_style": "band",
+      "cover_align": "center",
+      "accent_style": "block",
+      "content_bg": "surface",
+      "emoji": true,
+      "section_icons": true
+    },
+    "data-report": {
+      "label": "Data Report",
+      "desc": "숫자가 말하게 한다 — 표·차트 중심",
+      "formal": true,
+      "best_for": [
+        "재무",
+        "IR",
+        "데이터리포트",
+        "정부",
+        "리서치"
+      ],
+      "cover_style": "minimal",
+      "accent_style": "none",
+      "divider_style": "minimal"
+    },
+    "keynote-product": {
+      "label": "Keynote Product",
+      "desc": "제품 하나를 무대 위에",
+      "formal": true,
+      "best_for": [
+        "제품소개",
+        "테크런칭",
+        "하드웨어"
+      ],
+      "cover_style": "solid",
+      "cover_align": "center",
+      "accent_style": "tick",
+      "divider_style": "solid",
+      "section_icons": true
+    },
+    "academic": {
+      "label": "Academic",
+      "desc": "근거와 인용의 신뢰",
+      "formal": true,
+      "best_for": [
+        "교육",
+        "학술",
+        "정책보고",
+        "정부"
+      ],
+      "cover_style": "minimal",
+      "accent_style": "underline",
+      "divider_style": "minimal"
+    },
+    "startup-pitch": {
+      "label": "Startup Pitch",
+      "desc": "빠르고 자신있게 — 빅스테이트먼트",
+      "formal": false,
+      "best_for": [
+        "스타트업피치",
+        "투자유치",
+        "데모데이"
+      ],
+      "cover_style": "band",
+      "accent_style": "block",
+      "cover_title_pt": 56,
+      "section_icons": true
+    },
+    "luxury-serif": {
+      "label": "Luxury Serif",
+      "desc": "조용한 자신감",
+      "formal": true,
+      "best_for": [
+        "럭셔리",
+        "뷰티",
+        "프리미엄",
+        "전시"
+      ],
+      "cover_style": "minimal",
+      "cover_align": "center",
+      "accent_style": "tick",
+      "divider_style": "minimal",
+      "cover_title_pt": 48,
+      "hairline": false
+    },
+    "geometric-bold": {
+      "label": "Geometric Bold",
+      "desc": "도형이 곧 메시지",
+      "formal": false,
+      "best_for": [
+        "브랜드소개",
+        "크리에이티브",
+        "이벤트"
+      ],
+      "cover_style": "sidebar",
+      "accent_style": "block",
+      "section_icons": true
+    },
+    "duotone": {
+      "label": "Duotone",
+      "desc": "두 색으로 전부 말하기",
+      "formal": true,
+      "best_for": [
+        "브랜드캠페인",
+        "매거진",
+        "컨설팅"
+      ],
+      "cover_style": "band",
+      "accent_style": "underline",
+      "divider_style": "solid"
+    },
+    "terminal-mono": {
+      "label": "Terminal Mono",
+      "desc": "개발자의 화면",
+      "formal": true,
+      "best_for": [
+        "테크",
+        "개발자",
+        "오픈소스",
+        "인프라"
+      ],
+      "cover_style": "solid",
+      "accent_style": "tick",
+      "eyebrow_upper": false,
+      "content_bg": "bg"
+    },
+    "newsprint": {
+      "label": "Newsprint",
+      "desc": "오늘자 신문 1면",
+      "formal": true,
+      "best_for": [
+        "뉴스",
+        "미디어브리핑",
+        "정책요약",
+        "리서치다이제스트"
+      ],
+      "cover_style": "minimal",
+      "content_bg": "surface",
+      "accent_style": "underline",
+      "divider_style": "minimal"
+    },
+    "gradient-vibrant": {
+      "label": "Gradient Vibrant",
+      "desc": "에너지 넘치는 컬러",
+      "formal": false,
+      "best_for": [
+        "소셜",
+        "이벤트",
+        "페스티벌",
+        "크리에이터"
+      ],
+      "cover_style": "solid",
+      "cover_align": "center",
+      "accent_style": "block",
+      "emoji": true,
+      "section_icons": true
+    }
+  }
+}

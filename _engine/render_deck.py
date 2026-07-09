@@ -41,9 +41,68 @@ def C(h):
     return RGBColor.from_string(h.lstrip("#").upper())
 
 
+# A THEME is the VISUAL STYLE (typography, cover/divider treatment, accent, density,
+# emoji) -- orthogonal to the brand PALETTE (colors). Defaults reproduce the original
+# "corporate" look, so a deck with no theme renders exactly as before.
+THEME_DEFAULTS = {
+    "cover_style": "solid",       # solid | minimal | band | sidebar | dark
+    "cover_title_pt": 54,
+    "cover_align": "left",        # left | center
+    "title_pt": 25,               # content-slide header title
+    "eyebrow_track": 120,         # letter-spacing on the eyebrow
+    "eyebrow_upper": True,        # UPPERCASE the eyebrow (Latin only)
+    "divider_style": "solid",     # solid | minimal | huge
+    "divider_num_pt": 60,
+    "accent_style": "tick",       # tick | underline | block | none
+    "content_bg": "bg",           # bg | surface  (content-slide background token)
+    "hairline": True,             # header hairline under the title
+    "subtitle_pt": 14,
+    "body_pt": 12,
+    "emoji": False,               # render a leading emoji on eyebrows/sections
+    "section_icons": False,       # a Lucide section icon beside content-slide titles
+    "card_icons": True,           # a Lucide icon per bignum KPI card
+    "closing_mark": True,         # a Lucide mark on the closing slide
+}
+
+# Korean section keyword -> Lucide icon (line icons, NOT emoji). Used to place real
+# icons next to titles / on KPI cards. First substring match wins.
+SECTION_ICON = {
+    "개요": "layout-grid", "사업": "briefcase", "전략": "compass", "성장": "trending-up",
+    "로드맵": "map", "기술": "cpu", "리더십": "users", "제품": "package", "시장": "globe",
+    "미래": "rocket", "비전": "telescope", "실적": "chart-bar", "재무": "landmark",
+    "핵심": "key", "지표": "gauge", "포트폴리오": "layers", "경쟁": "swords",
+    "고객": "user-check", "조직": "building-2", "운영": "settings", "품질": "badge-check",
+    "보안": "shield", "데이터": "database", "AI": "bot", "글로벌": "earth",
+    "투자": "piggy-bank", "리스크": "triangle-alert", "성과": "trophy", "일정": "calendar",
+    "요약": "file-text", "결론": "flag", "배경": "book-open", "문제": "circle-alert",
+    "해결": "lightbulb", "방법": "wrench", "사례": "folder-open", "파트너": "handshake",
+    "채널": "send", "브랜드": "sparkles", "매출": "trending-up", "이익": "chart-bar",
+    "현금": "landmark", "부문": "layers", "건전성": "shield-check",
+}
+
+
+def resolve_icon(text):
+    if not text:
+        return None
+    for kw, ic in SECTION_ICON.items():
+        if kw in text:
+            return ic
+    return None
+
+# eyebrow/section keyword -> emoji (only used when the theme opts in). Formal decks
+# (finance/IR/gov/data-report) keep emoji off.
+EMOJI_MAP = {
+    "개요": "🚀", "사업": "🏢", "전략": "🎯", "성장": "📈", "로드맵": "🗺️",
+    "기술": "⚙️", "리더십": "🏆", "제품": "📦", "시장": "🌐", "미래": "✨",
+    "비전": "🌟", "실적": "📊", "재무": "💰", "핵심": "🔑", "지표": "📌",
+    "portfolio": "🧩", "growth": "📈", "contents": "📑", "business": "🏢",
+}
+
+
 class Deck:
-    def __init__(self, pal, tmpdir):
+    def __init__(self, pal, tmpdir, theme=None):
         self.p = pal
+        self.t = {**THEME_DEFAULTS, **(theme or {})}
         self.font = pal.get("font", "Pretendard")
         self.tmp = tmpdir
         self.prs = Presentation()
@@ -117,39 +176,120 @@ class Deck:
         s.shapes.add_picture(png, Inches(x + (w - nw) / 2), Inches(y + (h - nh) / 2),
                              Inches(nw), Inches(nh))
 
+    # ---- theme helpers ----
+    def cslide(self):
+        """Content-slide background per theme (bg or surface token)."""
+        return self.slide(self.p.get(self.t["content_bg"], self.p["bg"]))
+
+    def _eyebrow_text(self, eyebrow):
+        t = self.t
+        if t["emoji"] and eyebrow:
+            key = next((k for k in EMOJI_MAP if k in eyebrow), None)
+            em = EMOJI_MAP.get(key or "", "")
+            if em:
+                eyebrow = f"{em} {eyebrow}"
+        return eyebrow.upper() if t["eyebrow_upper"] else eyebrow
+
+    def _header_accent(self, s):
+        pal, a = self.p, self.t["accent_style"]
+        y = 2.4
+        if a == "none":
+            if self.t["hairline"]:
+                self.rect(s, 0.62, y + 0.02, 12.1, 0.012, pal["border"])
+            return
+        if a == "underline":
+            self.rect(s, 0.62, y + 0.01, 12.1, 0.03, pal["accent"])
+            return
+        if a == "block":
+            self.rect(s, 0.62, y - 0.02, 0.52, 0.1, pal["accent"])
+            if self.t["hairline"]:
+                self.rect(s, 1.26, y + 0.03, 11.46, 0.012, pal["border"])
+            return
+        self.rect(s, 0.62, y, 1.1, 0.045, pal["accent"])              # tick (default)
+        if self.t["hairline"]:
+            self.rect(s, 1.72, y + 0.018, 11.0, 0.012, pal["border"])
+
     # ---- shared header for content slides ----
     def header(self, s, eyebrow, title, subtitle, page):
-        pal = self.p
+        pal, t = self.p, self.t
         if eyebrow:
             tf = self.box(s, 0.62, 0.44, 9.5, 0.32)
-            self.para(tf, eyebrow.upper(), 11, self.accent_ink, bold=True, first=True, tracking=120)
+            self.para(tf, self._eyebrow_text(eyebrow), 11, self.accent_ink, bold=True,
+                      first=True, tracking=t["eyebrow_track"])
         if page:
             tf = self.box(s, SW - 1.5, 0.44, 0.9, 0.32)
             self.para(tf, page, 11, pal["muted"], first=True, align=PP_ALIGN.RIGHT)
-        tf = self.box(s, 0.62, 0.92, 12.1, 1.0)
-        self.para(tf, title, 25, pal["ink"], bold=True, first=True)
+        tx = 0.62
+        if t["section_icons"]:
+            ic = resolve_icon(eyebrow) or resolve_icon(title)
+            if ic and self._icon(s, ic, 0.62, 0.96, 0.42, pal["muted"]):
+                tx = 1.2
+        tf = self.box(s, tx, 0.92, 12.72 - tx, 1.0)
+        self.para(tf, title, t["title_pt"], pal["ink"], bold=True, first=True)
         if subtitle:
             tf = self.box(s, 0.62, 1.78, 12.1, 0.6)
-            self.para(tf, subtitle, 14, pal["sub"], first=True)
-        self.rect(s, 0.62, 2.4, 1.1, 0.045, pal["accent"])            # accent tick
-        self.rect(s, 1.72, 2.418, 11.0, 0.012, pal["border"])          # hairline
+            self.para(tf, subtitle, t["subtitle_pt"], pal["sub"], first=True)
+        self._header_accent(s)
 
     # ---- layouts ----
     def cover(self, sp):
-        pal = self.p
+        pal, t = self.p, self.t
+        style = t["cover_style"]
+        ey = sp.get("eyebrow", "")
+        ey = ey.upper() if t["eyebrow_upper"] else ey
+        title, sub = sp["title"], sp.get("subtitle")
+        ctpt = t["cover_title_pt"]
+        al = PP_ALIGN.CENTER if t["cover_align"] == "center" else PP_ALIGN.LEFT
+        cx = 0.62
+
+        if style == "minimal":  # light bg, ink text, small accent — editorial/luxury
+            s = self.slide(pal["bg"])
+            self.rect(s, cx, 0.72, 0.9, 0.09, pal["accent"])
+            tf = self.box(s, cx, 1.0, 11.5, 0.5)
+            self.para(tf, ey, 13, self.accent_ink, bold=True, first=True, tracking=180, align=al)
+            tf = self.box(s, cx, 3.7, 12.1, 2.8)
+            self.para(tf, title, ctpt, pal["ink"], bold=True, first=True, ls=1.05, align=al)
+            if sub:
+                self.para(tf, sub, 16, pal["sub"], sb=14, ls=1.25, align=al)
+            return
+
+        if style == "band":  # light top + brand-color bottom band holding the title
+            s = self.slide(pal["bg"])
+            bh = 3.0
+            self.rect(s, 0, SH - bh, SW, bh, pal["divider_bg"])
+            tf = self.box(s, cx, 0.95, 11.5, 0.5)
+            self.para(tf, ey, 13, self.accent_ink, bold=True, first=True, tracking=180, align=al)
+            tf = self.box(s, cx, SH - bh + 0.55, 12.1, bh - 0.7)
+            self.para(tf, title, min(ctpt, 46), pal["divider_ink"], bold=True, first=True, ls=1.05, align=al)
+            if sub:
+                self.para(tf, sub, 15, pal["divider_ink"], sb=12, ls=1.25, align=al)
+            return
+
+        if style == "sidebar":  # left color strip + light main area, ink title
+            s = self.slide(pal["bg"])
+            self.rect(s, 0, 0, 3.3, SH, pal["divider_bg"])
+            self.rect(s, 0.6, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
+            tf = self.box(s, 0.6, 1.0, 2.4, 3.0)
+            self.para(tf, ey, 12, pal["divider_ink"], bold=True, first=True, tracking=140)
+            tf = self.box(s, 3.9, 3.7, 8.9, 2.8)
+            self.para(tf, title, min(ctpt, 46), pal["ink"], bold=True, first=True, ls=1.05)
+            if sub:
+                self.para(tf, sub, 15, pal["sub"], sb=12, ls=1.25)
+            return
+
+        # solid / dark (default): full brand-color cover, light text
         s = self.slide(pal["divider_bg"])
-        self.rect(s, 0.7, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
-        tf = self.box(s, 0.66, 0.95, 11, 0.5)
-        self.para(tf, sp.get("eyebrow", "").upper(), 13, pal["divider_ink"], bold=True,
-                  first=True, tracking=180)
-        tf = self.box(s, 0.62, 3.9, 12.1, 2.6)
-        self.para(tf, sp["title"], 54, pal["divider_ink"], bold=True, first=True, ls=1.05)
-        if sp.get("subtitle"):
-            self.para(tf, sp["subtitle"], 16, pal["divider_ink"], sb=14, ls=1.25)
+        self.rect(s, cx + 0.08, 0.7, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
+        tf = self.box(s, cx + 0.04, 0.95, 11.5, 0.5)
+        self.para(tf, ey, 13, pal["divider_ink"], bold=True, first=True, tracking=180, align=al)
+        tf = self.box(s, cx, 3.9, 12.1, 2.6)
+        self.para(tf, title, ctpt, pal["divider_ink"], bold=True, first=True, ls=1.05, align=al)
+        if sub:
+            self.para(tf, sub, 16, pal["divider_ink"], sb=14, ls=1.25, align=al)
 
     def toc(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp.get("title", "Contents"),
                     sp.get("subtitle", ""), sp.get("page", ""))
         items = sp["items"]
@@ -169,16 +309,34 @@ class Deck:
                 self.para(tf, pg, 13, pal["muted"], first=True, align=PP_ALIGN.RIGHT)
 
     def divider(self, sp):
-        pal = self.p
+        pal, t = self.p, self.t
+        style = t["divider_style"]
+        num, title, sub = sp.get("num", ""), sp["title"], sp.get("subtitle")
+        if style == "minimal":  # light bg, ink, thin section number — airy
+            bg = sp.get("bg", pal["bg"])
+            s = self.slide(bg)
+            self.rect(s, 0.62, 3.05, 0.9, 0.09, pal["accent"])
+            tf = self.box(s, 0.62, 3.3, 12, 3.2)
+            self.para(tf, num, 22, self.accent_ink, bold=True, first=True, tracking=60)
+            self.para(tf, title, 36, pal["ink"], bold=True, sb=6)
+            if sub:
+                self.para(tf, sub, 15, pal["sub"], sb=10, ls=1.3)
+            return
         bg = sp.get("bg", pal["divider_bg"])
         s = self.slide(bg)
         ink = pal["divider_ink"]
+        if style == "huge":  # oversized chapter numeral filling the slide
+            tf = self.box(s, 0.5, 0.4, 12.4, 5.2)
+            self.para(tf, num, 220, ink, bold=True, first=True, ls=0.9)
+            tf = self.box(s, 0.62, 6.0, 12, 1.2)
+            self.para(tf, title, 34, ink, bold=True, first=True)
+            return
         self.rect(s, 0.7, 3.05, 0.9, 0.12, self._bar_on(bg))
         tf = self.box(s, 0.62, 3.3, 12, 3.2)
-        self.para(tf, sp.get("num", ""), 60, ink, bold=True, first=True)
-        self.para(tf, sp["title"], 38, ink, bold=True, sb=2)
-        if sp.get("subtitle"):
-            self.para(tf, sp["subtitle"], 15, ink, sb=10, ls=1.3)
+        self.para(tf, num, t["divider_num_pt"], ink, bold=True, first=True)
+        self.para(tf, title, 38, ink, bold=True, sb=2)
+        if sub:
+            self.para(tf, sub, 15, ink, sb=10, ls=1.3)
 
     def _icon(self, s, name, x, y, size, color):
         """Draw a Lucide line icon; fall back to an accent chip if unavailable."""
@@ -194,7 +352,7 @@ class Deck:
 
     def icongrid(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         cells = sp["cells"]; cols = sp.get("cols", 2)
@@ -224,7 +382,7 @@ class Deck:
         """Left column of head/body blocks + right zone reserved for an image
         (placed by place_images with slide=this, box in the right half)."""
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         items = sp["items"]
@@ -258,7 +416,7 @@ class Deck:
 
     def table(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         self._n += 1
@@ -274,7 +432,7 @@ class Deck:
 
     def numbered(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         items = sp["items"]
@@ -297,7 +455,7 @@ class Deck:
 
     def bullets(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         items = sp["items"]; x = 0.62; y = 2.85
@@ -314,7 +472,7 @@ class Deck:
 
     def kpi(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         self._n += 1
@@ -341,7 +499,7 @@ class Deck:
 
     def roadmap(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         png = os.path.join(self.tmp, "roadmap.png")
@@ -357,7 +515,7 @@ class Deck:
     def bignum(self, sp):
         """A row of big-number KPI cards (value + label + delta). For financial highlights."""
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         cards = sp["cards"]
@@ -371,7 +529,11 @@ class Deck:
             x = gx0 + i * (gw + 0.4)
             self.rect(s, x, y, gw, h, pal["surface"])
             self.rect(s, x, y, gw, 0.08, pal["accent"])
-            tf = self.box(s, x + 0.3, y + 0.4, gw - 0.6, 0.4)
+            if self.t["card_icons"]:
+                ic = resolve_icon(label)
+                if ic:
+                    self._icon(s, ic, x + gw - 0.64, y + 0.3, 0.36, pal["accent"])
+            tf = self.box(s, x + 0.3, y + 0.4, gw - 0.9, 0.4)
             self.para(tf, label, 12, pal["sub"], first=True)
             tf = self.box(s, x + 0.3, y + 0.92, gw - 0.6, 1.0)
             self.para(tf, val, 33, pal["ink"], bold=True, first=True)
@@ -381,7 +543,7 @@ class Deck:
 
     def trend(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         self._n += 1
@@ -398,7 +560,7 @@ class Deck:
 
     def segment(self, sp):
         pal = self.p
-        s = self.slide(pal["bg"])
+        s = self.cslide()
         self.header(s, sp.get("eyebrow", ""), sp["title"], sp.get("subtitle", ""),
                     sp.get("page", ""))
         self._n += 1
@@ -415,6 +577,9 @@ class Deck:
     def closing(self, sp):
         pal = self.p
         s = self.slide(pal["divider_bg"])
+        if self.t["closing_mark"]:
+            ic = resolve_icon(sp.get("title", "")) or "flag"
+            self._icon(s, ic, 0.62, 2.0, 0.62, self._bar_on(pal["divider_bg"]))
         self.rect(s, 0.7, 2.9, 0.9, 0.12, self._bar_on(pal["divider_bg"]))
         tf = self.box(s, 0.62, 3.15, 12.1, 2.6)
         self.para(tf, sp.get("title", "Thank you"), 40, pal["divider_ink"], bold=True, first=True)
@@ -444,6 +609,7 @@ def main():
     ap.add_argument("--spec", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--pdf", action="store_true", help="also export PDF via soffice")
+    ap.add_argument("--theme", help="visual theme name (from _engine/themes.json) or a .json path")
     args = ap.parse_args()
 
     with open(args.palette, encoding="utf-8") as f:
@@ -451,12 +617,29 @@ def main():
     with open(args.spec, encoding="utf-8") as f:
         spec = json.load(f)
 
+    # resolve theme: --theme flag > spec.meta.theme; a name looks up themes.json
+    theme = None
+    theme_ref = args.theme or spec.get("meta", {}).get("theme")
+    if isinstance(theme_ref, dict):
+        theme = theme_ref
+    elif theme_ref:
+        if os.path.isfile(theme_ref):
+            with open(theme_ref, encoding="utf-8") as f:
+                theme = json.load(f)
+        else:
+            tf = os.path.join(os.path.dirname(os.path.abspath(__file__)), "themes.json")
+            if os.path.isfile(tf):
+                with open(tf, encoding="utf-8") as f:
+                    theme = json.load(f).get("themes", {}).get(theme_ref)
+                if theme is None:
+                    sys.stderr.write(f"[theme '{theme_ref}' not found; using default]\n")
+
     # charts.py sits next to this file
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
-        deck = Deck(pal, tmp)
+        deck = Deck(pal, tmp, theme)
         deck.build(spec)
         deck.prs.save(args.out)
     print(f"[ok] {args.out}  ({len(spec['slides'])} slides, palette={pal.get('name')})")

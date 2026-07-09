@@ -63,7 +63,7 @@ def make_spec(slug, b, r=None):
     closing = {"layout": "closing", "title": b["closing_title"], "subtitle": b["closing_sub"],
                "contact": f'brand-inspired sample deck · 상표는 {b["owner"]}의 자산입니다'}
     if not r:
-        return {"meta": {"company": b["label_ko"], "eyebrow": ey}, "slides": [
+        return {"meta": {"company": b["label_ko"], "eyebrow": ey, "theme": "corporate-clean"}, "slides": [
             {"layout": "cover", "eyebrow": ey, "title": b["cover_title"], "subtitle": b["cover_sub"]},
             {"layout": "toc", "title": "Contents", "items": [["01", "회사 개요", "03"],
                 ["02", "핵심 사업 영역", "04"], ["03", "성장 지표", "05"], ["04", "미래 비전", "06"]]},
@@ -77,7 +77,7 @@ def make_spec(slug, b, r=None):
     cells = [[icons[i] if i < len(icons) else None, b["cells"][i][0], b["cells"][i][1]]
              for i in range(len(b["cells"]))]
     kw = [k.strip() for k in b["cover_sub"].replace("·", "|").split("|") if k.strip()][:4]
-    return {"meta": {"company": b["label_ko"], "eyebrow": ey}, "slides": [
+    return {"meta": {"company": b["label_ko"], "eyebrow": ey, "theme": "corporate-clean"}, "slides": [
         {"layout": "cover", "eyebrow": ey, "title": b["cover_title"], "subtitle": b["cover_sub"]},
         {"layout": "toc", "eyebrow": ey, "title": "Contents", "items": [
             ["01", "사업 개요", "03"], ["02", "핵심 사업 영역", "05"], ["03", "성장 전략", "07"],
