@@ -1,7 +1,7 @@
 ---
 name: deck-celltrion
 description: >-
-  Generate a Celltrion (셀트리온) brand-themed PPTX deck from a content spec, using the verified Celltrion color palette (accent #50B848) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "셀트리온 발표자료", "Celltrion 덱", "셀트리온 회사소개", "Celltrion brand deck", "make a Celltrion deck", "Celltrion 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 셀트리온 (Celltrion, Inc.).
+  Generate a Celltrion (셀트리온) brand-themed PPTX deck from a content spec, using the verified Celltrion color palette (accent #50B848) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "셀트리온 발표자료", "Celltrion 덱", "셀트리온 회사소개", "Celltrion brand deck", "make a Celltrion deck", "Celltrion 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 셀트리온 (Celltrion, Inc.).
 ---
 
 # deck-celltrion — Celltrion (셀트리온) 브랜드 데크

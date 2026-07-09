@@ -32,6 +32,10 @@ format are owned by code — so every deck comes out clean and consistent.
 설치 후 Claude Code를 재시작하거나 `/reload-plugins`. 갱신: `/plugin marketplace update kr-brand-decks`.
 원하는 회사 스킬만 골라 설치하면 됩니다.
 
+> 공용 렌더 엔진은 저장소 루트 `_engine/`에 있고, 각 스킬은 `../../_engine`으로 이를 호출합니다.
+> 스킬이 엔진을 못 찾는 경우(설치 방식에 따라)엔 아래 **B. git clone** 경로로 저장소 전체를
+> 받아 그 안에서 실행하세요(가장 확실).
+
 ### B. git clone + 로컬 스킬 (Claude Code / 수동)
 ```bash
 git clone https://github.com/sylvanus4/kr-brand-decks.git

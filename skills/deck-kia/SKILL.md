@@ -1,7 +1,7 @@
 ---
 name: deck-kia
 description: >-
-  Generate a Kia (기아) brand-themed PPTX deck from a content spec, using the verified Kia color palette (accent #EA0029) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "기아 발표자료", "Kia 덱", "기아 회사소개", "Kia brand deck", "make a Kia deck", "Kia 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 기아 (Kia Corporation).
+  Generate a Kia (기아) brand-themed PPTX deck from a content spec, using the verified Kia color palette (accent #EA0029) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "기아 발표자료", "Kia 덱", "기아 회사소개", "Kia brand deck", "make a Kia deck", "Kia 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 기아 (Kia Corporation).
 ---
 
 # deck-kia — Kia (기아) 브랜드 데크

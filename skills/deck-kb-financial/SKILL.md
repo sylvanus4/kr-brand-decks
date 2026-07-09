@@ -1,7 +1,7 @@
 ---
 name: deck-kb-financial
 description: >-
-  Generate a KB Financial Group (KB금융그룹) brand-themed PPTX deck from a content spec, using the verified KB Financial Group color palette (accent #FFBC00) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "KB금융그룹 발표자료", "KB Financial Group 덱", "KB금융그룹 회사소개", "KB Financial Group brand deck", "make a KB Financial Group deck", "KB Financial Group 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to KB금융그룹 (KB Financial Group Inc.).
+  Generate a KB Financial Group (KB금융그룹) brand-themed PPTX deck from a content spec, using the verified KB Financial Group color palette (accent #FFBC00) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "KB금융그룹 발표자료", "KB Financial Group 덱", "KB금융그룹 회사소개", "KB Financial Group brand deck", "make a KB Financial Group deck", "KB Financial Group 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to KB금융그룹 (KB Financial Group Inc.).
 ---
 
 # deck-kb-financial — KB Financial Group (KB금융그룹) 브랜드 데크

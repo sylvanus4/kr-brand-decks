@@ -1,7 +1,7 @@
 ---
 name: deck-lg-energy
 description: >-
-  Generate a LG Energy Solution (LG에너지솔루션) brand-themed PPTX deck from a content spec, using the verified LG Energy Solution color palette (accent #A50034) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "LG에너지솔루션 발표자료", "LG Energy Solution 덱", "LG에너지솔루션 회사소개", "LG Energy Solution brand deck", "make a LG Energy Solution deck", "LG Energy Solution 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to LG에너지솔루션 (LG Energy Solution Ltd.).
+  Generate a LG Energy Solution (LG에너지솔루션) brand-themed PPTX deck from a content spec, using the verified LG Energy Solution color palette (accent #A50034) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "LG에너지솔루션 발표자료", "LG Energy Solution 덱", "LG에너지솔루션 회사소개", "LG Energy Solution brand deck", "make a LG Energy Solution deck", "LG Energy Solution 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to LG에너지솔루션 (LG Energy Solution Ltd.).
 ---
 
 # deck-lg-energy — LG Energy Solution (LG에너지솔루션) 브랜드 데크

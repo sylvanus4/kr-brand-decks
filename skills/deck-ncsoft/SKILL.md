@@ -1,7 +1,7 @@
 ---
 name: deck-ncsoft
 description: >-
-  Generate a NCSOFT (엔씨소프트) brand-themed PPTX deck from a content spec, using the verified NCSOFT color palette (accent #8243F2) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "엔씨소프트 발표자료", "NCSOFT 덱", "엔씨소프트 회사소개", "NCSOFT brand deck", "make a NCSOFT deck", "NCSOFT 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 엔씨소프트 (NCSOFT).
+  Generate a NCSOFT (엔씨소프트) brand-themed PPTX deck from a content spec, using the verified NCSOFT color palette (accent #8243F2) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "엔씨소프트 발표자료", "NCSOFT 덱", "엔씨소프트 회사소개", "NCSOFT brand deck", "make a NCSOFT deck", "NCSOFT 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 엔씨소프트 (NCSOFT).
 ---
 
 # deck-ncsoft — NCSOFT (엔씨소프트) 브랜드 데크

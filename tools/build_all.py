@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """build_all.py -- build every company skill end to end.
 
-For each of the 20 companies: write palette.json / brand.json / spec.sample.json
+For each of the companies: write palette.json / brand.json / spec.sample.json
 (flagships keep their hand-authored files), generate SKILL.md + brand.md + plugin.json,
 render the 6-slide sample deck to PPTX + PDF + PNG previews, and validate it. Finally,
 assemble .claude-plugin/marketplace.json from every plugin.json.

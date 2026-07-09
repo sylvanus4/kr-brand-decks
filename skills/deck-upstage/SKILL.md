@@ -1,7 +1,7 @@
 ---
 name: deck-upstage
 description: >-
-  Generate a Upstage (업스테이지) brand-themed PPTX deck from a content spec, using the verified Upstage color palette (accent #4D65FF) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "업스테이지 발표자료", "Upstage 덱", "업스테이지 회사소개", "Upstage brand deck", "make a Upstage deck", "Upstage 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 업스테이지 (Upstage).
+  Generate a Upstage (업스테이지) brand-themed PPTX deck from a content spec, using the verified Upstage color palette (accent #4D65FF) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "업스테이지 발표자료", "Upstage 덱", "업스테이지 회사소개", "Upstage brand deck", "make a Upstage deck", "Upstage 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 업스테이지 (Upstage).
 ---
 
 # deck-upstage — Upstage (업스테이지) 브랜드 데크

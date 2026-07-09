@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # install.sh -- symlink kr-brand-decks skills into ~/.claude/skills so Claude Code
 # discovers them. Usage:
-#   ./install.sh                 # link ALL 20 company skills
+#   ./install.sh                 # link ALL company skills
 #   ./install.sh samsung-semi sk-hynix   # link only the named ones
 set -euo pipefail
 

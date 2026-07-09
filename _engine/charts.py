@@ -20,6 +20,8 @@ def _kr_font():
         "/System/Library/Fonts/AppleSDGothicNeo.ttc",
         "/System/Library/Fonts/Supplemental/AppleGothic.ttf",
         os.path.expanduser("~/Library/Fonts/Pretendard-Regular.otf"),
+        os.path.expanduser("~/.fonts/Pretendard-Regular.otf"),
+        os.path.expanduser("~/.fonts/Pretendard-Bold.otf"),
         "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
         "/usr/share/fonts/opentype/pretendard/Pretendard-Regular.otf",
     ]

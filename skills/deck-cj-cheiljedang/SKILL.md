@@ -1,7 +1,7 @@
 ---
 name: deck-cj-cheiljedang
 description: >-
-  Generate a CJ CheilJedang (CJ제일제당) brand-themed PPTX deck from a content spec, using the verified CJ CheilJedang color palette (accent #EF151E) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "CJ제일제당 발표자료", "CJ CheilJedang 덱", "CJ제일제당 회사소개", "CJ CheilJedang brand deck", "make a CJ CheilJedang deck", "CJ CheilJedang 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to CJ제일제당 (CJ CheilJedang Corp.).
+  Generate a CJ CheilJedang (CJ제일제당) brand-themed PPTX deck from a content spec, using the verified CJ CheilJedang color palette (accent #EF151E) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "CJ제일제당 발표자료", "CJ CheilJedang 덱", "CJ제일제당 회사소개", "CJ CheilJedang brand deck", "make a CJ CheilJedang deck", "CJ CheilJedang 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to CJ제일제당 (CJ CheilJedang Corp.).
 ---
 
 # deck-cj-cheiljedang — CJ CheilJedang (CJ제일제당) 브랜드 데크

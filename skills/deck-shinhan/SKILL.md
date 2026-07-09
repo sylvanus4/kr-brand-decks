@@ -1,7 +1,7 @@
 ---
 name: deck-shinhan
 description: >-
-  Generate a Shinhan Financial Group (신한금융그룹) brand-themed PPTX deck from a content spec, using the verified Shinhan Financial Group color palette (accent #0046FF) and reference-grade native layouts (cover, TOC, section divider, icon grid, KPI chart, closing). The model writes content; code owns all format. Use when "신한금융그룹 발표자료", "Shinhan Financial Group 덱", "신한금융그룹 회사소개", "Shinhan Financial Group brand deck", "make a Shinhan Financial Group deck", "Shinhan Financial Group 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 신한금융그룹 (Shinhan Financial Group).
+  Generate a Shinhan Financial Group (신한금융그룹) brand-themed PPTX deck from a content spec, using the verified Shinhan Financial Group color palette (accent #0046FF) and reference-grade native layouts (cover, TOC, section divider, Lucide icon grid, text+figure, comparison table, gantt roadmap, KPI/impact charts, closing). The model writes content; code owns all format. Use when "신한금융그룹 발표자료", "Shinhan Financial Group 덱", "신한금융그룹 회사소개", "Shinhan Financial Group brand deck", "make a Shinhan Financial Group deck", "Shinhan Financial Group 브랜드 발표자료". Do NOT use for a different company (use that company's deck-* skill) or a generic template deck (use branded-deck / anthropic-pptx). Unofficial brand-inspired theme; trademarks belong to 신한금융그룹 (Shinhan Financial Group).
 ---
 
 # deck-shinhan — Shinhan Financial Group (신한금융그룹) 브랜드 데크
