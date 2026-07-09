@@ -6,12 +6,12 @@
   "surface": "F5F6F8",
   "border": "E1E3E8",
   "bg": "FFFFFF",
-  "divider_ink": "FFFFFF",
+  "divider_ink": "191919",
   "name": "kakao",
   "label": "Kakao",
   "accent": "FEE500",
-  "divider_bg": "191919",
-  "accent_ink": "191919",
+  "divider_bg": "FEE500",
+  "accent_ink": "3B1E1E",
   "on_accent": "191919",
-  "_source": "Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우엔 어두운 텍스트 규정), brandcolorcode.com 교차확인. Near-black #1E1E1E 보조 | Unofficial brand-inspired theme; trademarks belong to 카카오 (Kakao Corp.)"
+  "_source": "Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우 배경 + 어두운 텍스트 규정), brandcolorcode.com 교차확인. 표지·섹션은 노랑 배경 + 다크 텍스트, 본문은 흰 배경 | Unofficial brand-inspired theme; trademarks belong to 카카오 (Kakao Corp.)"
 }

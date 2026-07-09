@@ -8,7 +8,7 @@
 | 역할 | HEX | 설명 |
 |---|---|---|
 | accent | `#FEE500` | 시그니처 브랜드 컬러 |
-| divider_bg | `#191919` | 커버·섹션 배경 (흰 텍스트 대비 확보) |
+| divider_bg | `#FEE500` | 커버·섹션 배경 (흰 텍스트 대비 확보) |
 | ink | `#1A1A1A` | 제목 |
 | sub | `#4A4A4A` | 본문 |
 | muted | `#8A8A8A` | 캡션·페이지 번호 |
@@ -16,7 +16,7 @@
 | border | `#E1E3E8` | 헤어라인 |
 | bg | `#FFFFFF` | 슬라이드 배경 |
 
-**출처**: Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우엔 어두운 텍스트 규정), brandcolorcode.com 교차확인. Near-black #1E1E1E 보조
+**출처**: Kakao Yellow #FEE500 — 카카오 디자인시스템 공식값(옐로우 배경 + 어두운 텍스트 규정), brandcolorcode.com 교차확인. 표지·섹션은 노랑 배경 + 다크 텍스트, 본문은 흰 배경
 
 ## 타이포그래피
 

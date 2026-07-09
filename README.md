@@ -48,7 +48,15 @@ Cursor의 Agent가 `.cursor/rules/kr-brand-decks.mdc`를 읽어 렌더 명령을
 ### 사전 요구
 - Python 3.10+ 와 `pip install python-pptx pillow matplotlib`
 - PDF 내보내기(선택): LibreOffice(`soffice`)
-- 한글 폰트 권장: [Pretendard](https://github.com/orioncactus/pretendard) (무료)
+
+### ⚠️ 폰트 설치 (중요 — 안 하면 "손글씨"로 렌더됨)
+한글 폰트 **[Pretendard](https://github.com/orioncactus/pretendard)**(무료)가 설치돼 있어야
+합니다. 없으면 렌더러가 폰트명 "Pretendard"를 **붓글씨(손글씨)체로 대체**해 데크가 깨집니다.
+한 번만 실행하면 모든 데크가 한 번에 고쳐집니다:
+```bash
+./tools/install_fonts.sh          # ~/Library/Fonts (mac) 또는 ~/.fonts (linux)
+fc-match Pretendard               # Pretendard 파일이 뜨면 OK
+```
 
 ## 🧑‍💻 사용법
 
@@ -110,11 +118,28 @@ palette.json (검증된 브랜드 색)  +  spec.json (당신의 내용)
 모델은 **내용**만 쓰고, 코드가 **색·폰트·레이아웃**을 소유합니다. 그래서 저비용 모델로도
 포맷이 흔들리지 않고 매번 제출급 결과가 나옵니다.
 
-## 🤝 기여 / 회사 추가
+## 🖼 히어로 이미지 (선택)
 
-새 회사 추가는 `tools/brands_data.py`에 항목 하나(검증된 accent + 사업 내용)만 넣고
-`python3 tools/build_all.py`를 돌리면 스킬·샘플 PDF·매니페스트가 자동 생성됩니다.
-로컬 체험: `python3 tools/validate_marketplace.py` 로 매니페스트 검증.
+표지·섹션에 브랜드 톤의 **AI 생성 이미지**를 넣을 수 있습니다. 플래그십 샘플(삼성반도체·
+SK하이닉스) 표지가 그 예시입니다. **본인 `OPENAI_API_KEY`가 있을 때만** 동작하고, 없으면
+자리표시자로 안전하게 대체됩니다(빌드 중단 없음). 키 설정·계획 작성·실행 →
+**[docs/IMAGES.md](docs/IMAGES.md)**.
+
+```bash
+export OPENAI_API_KEY="sk-..."        # 본인 키
+python3 _engine/place_images.py --in <deck>.pptx --plan images.json --out <deck>.pptx --mode auto
+```
+
+## ➕ 새 회사 추가
+
+홈페이지/브랜드 색만 있으면 20개사와 동일한 방식으로 한 줄에 스캐폴딩됩니다:
+```bash
+python3 tools/new_company.py --slug foo --label "Foo" --label-ko "푸" \
+  --accent EA002C --tagline "..." --owner "..." --homepage https://...
+```
+상세 가이드(밝은 색 대비 처리 포함) → **[docs/ADD_A_COMPANY.md](docs/ADD_A_COMPANY.md)**.
+영구 관리는 `tools/brands_data.py`에 항목 추가 후 `python3 tools/build_all.py`.
+로컬 매니페스트 검증: `python3 tools/validate_marketplace.py`.
 
 ## 📄 라이선스
 

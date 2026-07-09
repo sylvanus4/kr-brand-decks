@@ -17,7 +17,7 @@ description: >-
 | accent | `#FEE500` | bg | `#FFFFFF` |
 | ink | `#1A1A1A` | surface | `#F5F6F8` |
 | sub | `#4A4A4A` | border | `#E1E3E8` |
-| divider_bg | `#191919` | divider_ink | `#FFFFFF` |
+| divider_bg | `#FEE500` | divider_ink | `#191919` |
 
 출처·타이포·아트디렉션·상표 고지는 [`brand.md`](brand.md) 참조.
 
