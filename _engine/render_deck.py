@@ -325,6 +325,12 @@ class Deck:
         al = PP_ALIGN.CENTER if t["cover_align"] == "center" else PP_ALIGN.LEFT
         cx = 0.62
 
+        # AI-generated template background image (creative-template pipeline)
+        if sp.get("bg_image") and os.path.exists(sp["bg_image"]):
+            self.imagefull({"image": sp["bg_image"], "eyebrow": sp.get("eyebrow", ""),
+                            "title": title, "subtitle": sub})
+            return
+
         if style == "minimal":  # light bg, ink text, small accent — editorial/luxury
             s = self.dslide(pal["bg"], "cover")
             self.rect(s, cx, 0.72, 0.9, 0.09, pal["accent"])
@@ -395,6 +401,9 @@ class Deck:
         pal, t = self.p, self.t
         style = t["divider_style"]
         num, title, sub = sp.get("num", ""), sp["title"], sp.get("subtitle")
+        if sp.get("bg_image") and os.path.exists(sp["bg_image"]):
+            self.imagefull({"image": sp["bg_image"], "eyebrow": num, "title": title, "subtitle": sub})
+            return
         if style == "minimal":  # light bg, ink, thin section number — airy
             bg = sp.get("bg", pal["bg"])
             s = self.dslide(bg, "divider")
